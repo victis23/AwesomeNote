@@ -12,9 +12,29 @@ import UIKit
 class ViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
-	var notes : [Note] = []
 	
+	//Persistent container context used to save values to local database.
+	var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
+	//Instance of helper class for saving and retriving items from persistent container.
+	weak var coreDataHelper : Retriever? {
+		Retriever(context: context)
+	}
+	
+	// Instance of Core Data Note Object.
+	weak var note : CDNote? {
+		let note = CDNote(context: context)
+		return note
+	}
+	
+	// Note Objects that will be displayed in the tableview.
+	var notes : [CDNote] = []
+	
+	//MARK: Application State
+	
+	/// Sets delegate & datasource for tableview
+	/// - Note: Checks if application was interrumpted when note was being created.
+	/// - Important: Calls helper and retrieves an array of items from persistent container.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.delegate = self
