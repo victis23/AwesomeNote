@@ -79,6 +79,8 @@ class ViewController: UIViewController {
 				
 				note.title = setTitle
 				note.content = content
+				note.index = Int16(indexPath.row + 1)
+				
 				coreDataHelper?.saveInCoreData()
 				
 				//Removes old version of note from Notes Array.
@@ -102,6 +104,13 @@ class ViewController: UIViewController {
 				
 				note.title = setTitle
 				note.content = content
+				
+				if notes.isEmpty {
+					note.index = Int16(1)
+				}else{
+					note.index = Int16(notes.count + 1)
+				}
+				
 				
 				notes.append(note)
 				coreDataHelper?.saveInCoreData()
