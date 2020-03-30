@@ -8,13 +8,16 @@
 
 import Foundation
 
+///Contains data user did not have the opportunity to save.
 struct QuickSaveData : Codable {
 	
 	var userInput : String
 }
 
+///Creates a .plist containing temporary data user did not have the chance to save.
 extension QuickSaveData {
 	
+	///Creates empty .plist file.
 	static func createURL()->URL{
 		let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
 		let filepath = folder.appendingPathComponent("tempData").appendingPathExtension("plist")
@@ -22,6 +25,7 @@ extension QuickSaveData {
 		return filepath
 	}
 	
+	///Writes data to .plist file saved on disk.
 	static func saveData(_ incomingData : QuickSaveData){
 		let encoder = PropertyListEncoder()
 		guard let data = try? encoder.encode(incomingData) else {return}
@@ -31,6 +35,7 @@ extension QuickSaveData {
 		
 	}
 	
+	///Retrieves plist file and decodes data into a QuickSaveData Object.
 	static func retrieveData(completion :@escaping (QuickSaveData?)->Void){
 		let decoder = PropertyListDecoder()
 		guard let rawData = try? Data(contentsOf: createURL()) else {return}
