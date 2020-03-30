@@ -15,15 +15,22 @@ class AddNote_ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		userNoteTextView.text = newNote?.noteContent
+		
+		callObservers()
+		userNoteTextView.text = newNote?.content
 		userNoteTextView.becomeFirstResponder()
 		self.title = setTitleOfView
+		
+		// Makes sure title on this screen are always inline(small).
+		navigationController?.navigationBar.prefersLargeTitles = false
+	}
+	
+	/// Contains bundle of observers used to monitor application state.
+	func callObservers(){
 		checkForCancelNotificationFromMainController()
 		checkForPauseOrQuit()
-		checkForData() // retrieve lost data
+		checkForData()
 		checkForSaving()
-		navigationController?.navigationBar.prefersLargeTitles = false
-		
 	}
 	
 	
