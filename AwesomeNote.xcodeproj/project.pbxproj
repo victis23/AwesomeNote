@@ -120,7 +120,6 @@
 				7D27FE2324326B080060DC29 /* Controller */,
 				7D27FDFD24326A3C0060DC29 /* Info.plist */,
 				7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */,
-				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 			);
 			path = AwesomeNote;
 			sourceTree = "<group>";
@@ -146,6 +145,7 @@
 		7D27FE2324326B080060DC29 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
 				7D27FE1F24326AA90060DC29 /* ViewController+.swift */,
 			);
