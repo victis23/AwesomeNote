@@ -45,12 +45,18 @@ class ViewController: UIViewController {
 				note.content = content
 				coreDataHelper?.saveInCoreData()
 				
+				//Removes old version of note from Notes Array.
 				notes.remove(at: indexPath.row)
+				//Writes updated version of note to Array.
 				notes.insert(note, at: indexPath.row)
+				
+				//Deselects row and reloads table.
 				tableView.deselectRow(at: indexPath, animated: true)
 				tableView.reloadData()
-				Note.saveData(userData: notes)
+				
+				//
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
+				
 			} else {
 				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
 				let displayTitle = content.split(separator: " ")
@@ -73,7 +79,11 @@ class ViewController: UIViewController {
 	}
 	
 	
+	/// Sets the preview test user sees for each note added to tableview.
+	/// - Important: The max length for preview is 4 words.
 	func setTitle(_ displayTitle : [String.SubSequence], _ setTitleIncoming : String)->String{
+		
+		//Holds preview text.
 		var setTitle = setTitleIncoming
 		
 		switch displayTitle.count {
@@ -89,7 +99,6 @@ class ViewController: UIViewController {
 			setTitle = "\(displayTitle[0]) \(displayTitle[1]) \(displayTitle[2]) \(displayTitle[3]) ..."
 		default :
 			break
-			
 		}
 		
 		return setTitle
