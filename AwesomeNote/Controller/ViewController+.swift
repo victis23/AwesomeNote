@@ -2,7 +2,7 @@
 //  ViewController_Extention.swift
 //  NotesWithStoryBoard
 //
-//  Created by Scott Leonard on 8/30/19.
+//  Created by Michael Wells on 8/30/19.
 //  Copyright © 2019 Scott Leonard. All rights reserved.
 //
 
@@ -48,7 +48,6 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 		print(notes)
 		let movedValue = notes.remove(at: sourceIndexPath.row)
 		notes.insert(movedValue, at: destinationIndexPath.row)
-		// notes.swapAt(sourceIndexPath.row, destinationIndexPath.row)
 		print(notes)
 		Note.saveData(userData: notes)
 	}
