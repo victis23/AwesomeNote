@@ -57,6 +57,7 @@ class ViewController: UIViewController {
 			//Enables tab button for new notes.
 			saveNoteController.setTabsToDisabled(changeState: false)
 			
+			// If statement checks whether value is being edited or is a new entry.
 			if let indexPath = tableView.indexPathForSelectedRow {
 				
 				//Taken from Objective-C / Remember that CoreData stores numbers as NSNumber objects.
@@ -96,6 +97,9 @@ class ViewController: UIViewController {
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
 				
 			} else {
+				
+				// Executes on first save.
+				
 				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
 				let displayTitle = content.split(separator: " ")
 				var setTitle : String = ""
