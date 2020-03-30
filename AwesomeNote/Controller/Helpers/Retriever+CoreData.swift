@@ -18,9 +18,14 @@ class Retriever {
 	}
 	
 	//Returns array of CDNote Objects from Persistent Container.
-	public func retrieveFromCoreData() -> [CDNote]?{
+	public func retrieveFromCoreData(query : NSPredicate? = nil) -> [CDNote]?{
 		
 		let _fetchRequest = NSFetchRequest<CDNote>(entityName: "CDNote")
+		
+		if query != nil {
+			_fetchRequest.predicate = query
+		}
+		
 		
 		let _notes = try? context.fetch(_fetchRequest)
 		
@@ -46,9 +51,9 @@ class Retriever {
 		
 	}
 	
-	public func swap(_ object: Any, with object2: Any){
-		guard let object1 = object as? NSManagedObject,
-			let object2 = object2 as? NSManagedObject else {return}
-		
-	}
+//	public func swap(_ object: Any, with object2: Any){
+//		guard let object1 = object as? NSManagedObject,
+//			let object2 = object2 as? NSManagedObject else {return}
+//
+//	}
 }
