@@ -59,7 +59,19 @@ class ViewController: UIViewController {
 			
 			if let indexPath = tableView.indexPathForSelectedRow {
 				
-				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
+				//Taken from Objective-C / Remember that CoreData stores numbers as NSNumber objects.
+				//If you use an integer here you'll get a memory mismatch error.
+				let query = NSPredicate(format: "index = %@", NSNumber(value: indexPath.row + 1))
+				
+				guard let content = saveNoteController.userNoteTextView.text, content != "",
+					let object = coreDataHelper?.retrieveFromCoreData(query: query) else {return}
+				
+				//Deletes objects with matching index from coredata.
+				//Remember this is a required step or we will have duplicates.
+				object.forEach {
+					coreDataHelper?.remove(object: $0)
+				}
+				
 				let displayTitle = content.split(separator: " ")
 				var setTitle : String = ""
 				
