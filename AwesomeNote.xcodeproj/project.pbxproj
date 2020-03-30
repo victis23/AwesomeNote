@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */; };
+		7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */; };
+		7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FDF024326A3C0060DC29 /* ViewController.swift */; };
+		7D27FDF424326A3C0060DC29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FDF224326A3C0060DC29 /* Main.storyboard */; };
+		7D27FDF724326A3C0060DC29 /* AwesomeNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */; };
+		7D27FDF924326A3C0060DC29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FDF824326A3C0060DC29 /* Assets.xcassets */; };
+		7D27FDFC24326A3C0060DC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */; };
+		7D27FE0724326A3C0060DC29 /* AwesomeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE0624326A3C0060DC29 /* AwesomeNoteTests.swift */; };
+		7D27FE1224326A3C0060DC29 /* AwesomeNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE1124326A3C0060DC29 /* AwesomeNoteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D27FE0324326A3C0060DC29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D27FDE124326A3C0060DC29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D27FDE824326A3C0060DC29;
+			remoteInfo = AwesomeNote;
+		};
+		7D27FE0E24326A3C0060DC29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D27FDE124326A3C0060DC29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D27FDE824326A3C0060DC29;
+			remoteInfo = AwesomeNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D27FDE924326A3C0060DC29 /* AwesomeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7D27FDF024326A3C0060DC29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D27FDF324326A3C0060DC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D27FDF624326A3C0060DC29 /* AwesomeNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AwesomeNote.xcdatamodel; sourceTree = "<group>"; };
+		7D27FDF824326A3C0060DC29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D27FDFB24326A3C0060DC29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D27FDFD24326A3C0060DC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D27FE0224326A3C0060DC29 /* AwesomeNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D27FE0624326A3C0060DC29 /* AwesomeNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNoteTests.swift; sourceTree = "<group>"; };
+		7D27FE0824326A3C0060DC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D27FE0D24326A3C0060DC29 /* AwesomeNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D27FE1124326A3C0060DC29 /* AwesomeNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNoteUITests.swift; sourceTree = "<group>"; };
+		7D27FE1324326A3C0060DC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D27FDE624326A3C0060DC29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FDFF24326A3C0060DC29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FE0A24326A3C0060DC29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D27FDE024326A3C0060DC29 = {
+			isa = PBXGroup;
+			children = (
+				7D27FDEB24326A3C0060DC29 /* AwesomeNote */,
+				7D27FE0524326A3C0060DC29 /* AwesomeNoteTests */,
+				7D27FE1024326A3C0060DC29 /* AwesomeNoteUITests */,
+				7D27FDEA24326A3C0060DC29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D27FDEA24326A3C0060DC29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FDE924326A3C0060DC29 /* AwesomeNote.app */,
+				7D27FE0224326A3C0060DC29 /* AwesomeNoteTests.xctest */,
+				7D27FE0D24326A3C0060DC29 /* AwesomeNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D27FDEB24326A3C0060DC29 /* AwesomeNote */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */,
+				7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */,
+				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
+				7D27FDF224326A3C0060DC29 /* Main.storyboard */,
+				7D27FDF824326A3C0060DC29 /* Assets.xcassets */,
+				7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */,
+				7D27FDFD24326A3C0060DC29 /* Info.plist */,
+				7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */,
+			);
+			path = AwesomeNote;
+			sourceTree = "<group>";
+		};
+		7D27FE0524326A3C0060DC29 /* AwesomeNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FE0624326A3C0060DC29 /* AwesomeNoteTests.swift */,
+				7D27FE0824326A3C0060DC29 /* Info.plist */,
+			);
+			path = AwesomeNoteTests;
+			sourceTree = "<group>";
+		};
+		7D27FE1024326A3C0060DC29 /* AwesomeNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FE1124326A3C0060DC29 /* AwesomeNoteUITests.swift */,
+				7D27FE1324326A3C0060DC29 /* Info.plist */,
+			);
+			path = AwesomeNoteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D27FDE824326A3C0060DC29 /* AwesomeNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D27FE1624326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNote" */;
+			buildPhases = (
+				7D27FDE524326A3C0060DC29 /* Sources */,
+				7D27FDE624326A3C0060DC29 /* Frameworks */,
+				7D27FDE724326A3C0060DC29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AwesomeNote;
+			productName = AwesomeNote;
+			productReference = 7D27FDE924326A3C0060DC29 /* AwesomeNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D27FE0124326A3C0060DC29 /* AwesomeNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D27FE1924326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNoteTests" */;
+			buildPhases = (
+				7D27FDFE24326A3C0060DC29 /* Sources */,
+				7D27FDFF24326A3C0060DC29 /* Frameworks */,
+				7D27FE0024326A3C0060DC29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D27FE0424326A3C0060DC29 /* PBXTargetDependency */,
+			);
+			name = AwesomeNoteTests;
+			productName = AwesomeNoteTests;
+			productReference = 7D27FE0224326A3C0060DC29 /* AwesomeNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7D27FE0C24326A3C0060DC29 /* AwesomeNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D27FE1C24326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNoteUITests" */;
+			buildPhases = (
+				7D27FE0924326A3C0060DC29 /* Sources */,
+				7D27FE0A24326A3C0060DC29 /* Frameworks */,
+				7D27FE0B24326A3C0060DC29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D27FE0F24326A3C0060DC29 /* PBXTargetDependency */,
+			);
+			name = AwesomeNoteUITests;
+			productName = AwesomeNoteUITests;
+			productReference = 7D27FE0D24326A3C0060DC29 /* AwesomeNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D27FDE124326A3C0060DC29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = DuhMarket;
+				TargetAttributes = {
+					7D27FDE824326A3C0060DC29 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					7D27FE0124326A3C0060DC29 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7D27FDE824326A3C0060DC29;
+					};
+					7D27FE0C24326A3C0060DC29 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 7D27FDE824326A3C0060DC29;
+					};
+				};
+			};
+			buildConfigurationList = 7D27FDE424326A3C0060DC29 /* Build configuration list for PBXProject "AwesomeNote" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D27FDE024326A3C0060DC29;
+			productRefGroup = 7D27FDEA24326A3C0060DC29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D27FDE824326A3C0060DC29 /* AwesomeNote */,
+				7D27FE0124326A3C0060DC29 /* AwesomeNoteTests */,
+				7D27FE0C24326A3C0060DC29 /* AwesomeNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D27FDE724326A3C0060DC29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D27FDFC24326A3C0060DC29 /* LaunchScreen.storyboard in Resources */,
+				7D27FDF924326A3C0060DC29 /* Assets.xcassets in Resources */,
+				7D27FDF424326A3C0060DC29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FE0024326A3C0060DC29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FE0B24326A3C0060DC29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D27FDE524326A3C0060DC29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
+				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
+				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
+				7D27FDF724326A3C0060DC29 /* AwesomeNote.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FDFE24326A3C0060DC29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D27FE0724326A3C0060DC29 /* AwesomeNoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D27FE0924326A3C0060DC29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D27FE1224326A3C0060DC29 /* AwesomeNoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D27FE0424326A3C0060DC29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D27FDE824326A3C0060DC29 /* AwesomeNote */;
+			targetProxy = 7D27FE0324326A3C0060DC29 /* PBXContainerItemProxy */;
+		};
+		7D27FE0F24326A3C0060DC29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D27FDE824326A3C0060DC29 /* AwesomeNote */;
+			targetProxy = 7D27FE0E24326A3C0060DC29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D27FDF224326A3C0060DC29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D27FDF324326A3C0060DC29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D27FDFB24326A3C0060DC29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D27FE1424326A3C0060DC29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D27FE1524326A3C0060DC29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D27FE1724326A3C0060DC29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D27FE1824326A3C0060DC29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D27FE1A24326A3C0060DC29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AwesomeNote.app/AwesomeNote";
+			};
+			name = Debug;
+		};
+		7D27FE1B24326A3C0060DC29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNoteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AwesomeNote.app/AwesomeNote";
+			};
+			name = Release;
+		};
+		7D27FE1D24326A3C0060DC29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AwesomeNote;
+			};
+			name = Debug;
+		};
+		7D27FE1E24326A3C0060DC29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 55P567K3FP;
+				INFOPLIST_FILE = AwesomeNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.duhmarket.AwesomeNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AwesomeNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D27FDE424326A3C0060DC29 /* Build configuration list for PBXProject "AwesomeNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D27FE1424326A3C0060DC29 /* Debug */,
+				7D27FE1524326A3C0060DC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D27FE1624326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D27FE1724326A3C0060DC29 /* Debug */,
+				7D27FE1824326A3C0060DC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D27FE1924326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D27FE1A24326A3C0060DC29 /* Debug */,
+				7D27FE1B24326A3C0060DC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D27FE1C24326A3C0060DC29 /* Build configuration list for PBXNativeTarget "AwesomeNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D27FE1D24326A3C0060DC29 /* Debug */,
+				7D27FE1E24326A3C0060DC29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7D27FDF624326A3C0060DC29 /* AwesomeNote.xcdatamodel */,
+			);
+			currentVersion = 7D27FDF624326A3C0060DC29 /* AwesomeNote.xcdatamodel */;
+			path = AwesomeNote.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7D27FDE124326A3C0060DC29 /* Project object */;
+}
