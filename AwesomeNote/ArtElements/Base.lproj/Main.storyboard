@@ -10,7 +10,7 @@
         <!--List-->
         <scene sceneID="DuH-ST-YPg">
             <objects>
-                <viewController title="List" id="dRr-lK-id2" customClass="ViewController" customModule="NotesWithStoryBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="List" id="dRr-lK-id2" customClass="ViewController" customModule="AwesomeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q8T-1h-J26">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="sC9-H3-80r" customClass="theCell" customModule="NotesWithStoryBoard" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="sC9-H3-80r" customClass="theCell" customModule="AwesomeNote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sC9-H3-80r" id="ZC3-nr-Qun" customClass="UITableViewCell">
@@ -86,18 +86,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXD-Zd-I9A" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6508.6956521739139" y="112.5"/>
+            <point key="canvasLocation" x="7303" y="842"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="ZIj-1I-Ukk">
             <objects>
-                <viewController id="oP6-A9-awN" customClass="AddNote_ViewController" customModule="NotesWithStoryBoard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oP6-A9-awN" customClass="AddNote_ViewController" customModule="AwesomeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uJ8-Gy-eeF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="by9-mF-wmt">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES" searchField="YES"/>
@@ -135,7 +135,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="al2-8y-AZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="U7a-ol-dTU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8213.04347826087" y="112.5"/>
+            <point key="canvasLocation" x="8841" y="410"/>
         </scene>
         <!--Notes-->
         <scene sceneID="fNq-Nv-Rfw">
@@ -174,7 +174,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2S-YX-bQh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5598.5507246376819" y="112.5"/>
+            <point key="canvasLocation" x="5923" y="113"/>
         </scene>
         <!--New Note-->
         <scene sceneID="KDn-yk-poX">
@@ -197,7 +197,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sXY-WY-YZh"/>
+        <segue reference="z3D-vx-DPM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
