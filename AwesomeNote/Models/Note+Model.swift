@@ -13,6 +13,10 @@ import Foundation
 struct Note : Codable {
 	var title : String
 	var noteContent : String
+}
+
+
+extension Note {
 	
 	static func setSavedDataPath()->URL{
 		let container = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
