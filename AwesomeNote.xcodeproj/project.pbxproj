@@ -113,11 +113,10 @@
 		7D27FDEB24326A3C0060DC29 /* AwesomeNote */ = {
 			isa = PBXGroup;
 			children = (
+				7D27FE2F24326D420060DC29 /* ApplicationState */,
 				7D27FE2724326B650060DC29 /* Models */,
 				7D27FE2424326B1C0060DC29 /* Views */,
 				7D27FE2324326B080060DC29 /* Controller */,
-				7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */,
-				7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */,
 				7D27FDF224326A3C0060DC29 /* Main.storyboard */,
 				7D27FDF824326A3C0060DC29 /* Assets.xcassets */,
 				7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */,
@@ -179,6 +178,15 @@
 				7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D27FE2F24326D420060DC29 /* ApplicationState */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */,
+				7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */,
+			);
+			path = ApplicationState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
