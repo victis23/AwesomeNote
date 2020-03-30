@@ -172,10 +172,11 @@ class ViewController: UIViewController {
 	
 	private func checkForInterruption(){
 		
-		if QuickSaveData.retrieveData() != nil {
-			performSegue(withIdentifier: "resume", sender: self)
-		}
-		
+		QuickSaveData.retrieveData(completion: { [weak self] in
+			if $0 != nil {
+				self?.performSegue(withIdentifier: "resume", sender: self)
+			}
+		})
 	}
 	
 	// MARK: Action

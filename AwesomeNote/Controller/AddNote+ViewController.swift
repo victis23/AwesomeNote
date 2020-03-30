@@ -18,8 +18,13 @@ class AddNote_ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		//Removes default text.
+		clearDefaultText()
+		
+		//Must be called after cleardefault text otherwise value is reset.
+		checkForData()
+		
 		callObservers()
-		userNoteTextView.text = newNote?.content
 		userNoteTextView.becomeFirstResponder()
 		self.title = setTitleOfView
 		
@@ -36,8 +41,12 @@ class AddNote_ViewController: UIViewController {
 	private func callObservers(){
 		checkForCancelNotificationFromMainController()
 		checkForPauseOrQuit()
-		checkForData()
 		checkForSaving()
+	}
+	
+	///Clears out default text must be called first.
+	private func clearDefaultText(){
+		userNoteTextView.text = newNote?.content
 	}
 	
 	/// Adds observer that notifies application if user cancels open note when creating from tab.
@@ -78,11 +87,15 @@ class AddNote_ViewController: UIViewController {
 	/// - Important: Once the data is retrieved  the textview is updated and the file is removed from disk.
 	private func checkForData(){
 		
-		if QuickSaveData.retrieveData() != nil {
-			userNoteTextView.text = QuickSaveData.retrieveData()?.userInput
-			
+		defer {
 			try? FileManager.default.removeItem(at: QuickSaveData.createURL())
 		}
+		
+		QuickSaveData.retrieveData(completion: { [weak self] in
+			guard let input = $0?.userInput else {return}
+			self?.userNoteTextView.text = input
+			print(input)
+		})
 		
 	}
 	

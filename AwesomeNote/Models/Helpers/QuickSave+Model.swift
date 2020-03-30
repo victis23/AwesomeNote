@@ -31,10 +31,10 @@ extension QuickSaveData {
 		
 	}
 	
-	static func retrieveData()->QuickSaveData?{
+	static func retrieveData(completion :@escaping (QuickSaveData?)->Void){
 		let decoder = PropertyListDecoder()
-		guard let rawData = try? Data(contentsOf: createURL()) else {return nil}
-		guard let decodedData = try? decoder.decode(QuickSaveData.self, from: rawData) else {return nil}
-		return decodedData
+		guard let rawData = try? Data(contentsOf: createURL()) else {return}
+		guard let decodedData = try? decoder.decode(QuickSaveData.self, from: rawData) else {return}
+		completion(decodedData)
 	}
 }
