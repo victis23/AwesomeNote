@@ -10,7 +10,7 @@ import UIKit
 
 class AddNote_ViewController: UIViewController {
 	@IBOutlet weak var userNoteTextView: UITextView!
-	var newNote : Note?
+	var newNote : CDNote?
 	var setTitleOfView = "New Note"
 	
 	override func viewDidLoad() {
