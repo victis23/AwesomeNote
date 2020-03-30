@@ -13,7 +13,7 @@ class AddNote_ViewController: UIViewController {
 	
 	@IBOutlet weak var userNoteTextView: UITextView!
 	var newNote : CDNote?
-	var setTitleOfView = "New Note"
+	public var setTitleOfView = "New Note"
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,8 +27,13 @@ class AddNote_ViewController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = false
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		setTabsToDisabled(changeState: true)
+	}
+	
 	/// Contains bundle of observers used to monitor application state.
-	func callObservers(){
+	private func callObservers(){
 		checkForCancelNotificationFromMainController()
 		checkForPauseOrQuit()
 		checkForData()
@@ -37,7 +42,7 @@ class AddNote_ViewController: UIViewController {
 	
 	/// Adds observer that notifies application if user cancels open note when creating from tab.
 	/// - Note: If notification is recieved text data is removed from UITextView.
-	func checkForCancelNotificationFromMainController(){
+	private func checkForCancelNotificationFromMainController(){
 		NotificationCenter.default.addObserver(self,
 											   selector: #selector(clearNewNote(_:)),
 											   name: NSNotification.Name(ReuseIdentifier.cancel),
@@ -47,7 +52,7 @@ class AddNote_ViewController: UIViewController {
 	/// Monitors application state for major changes.
 	/// - Pause Observer: Adds observer that notifies application if application is no longer active (enters foreground).
 	/// - Quit Observer: Adds observer that notifies application if terminated.
-	func checkForPauseOrQuit(){
+	private func checkForPauseOrQuit(){
 		NotificationCenter.default.addObserver(self,
 											   selector: #selector(autoSave),
 											   name: NSNotification.Name(ReuseIdentifier.pause),
@@ -62,7 +67,7 @@ class AddNote_ViewController: UIViewController {
 	
 	/// Clears data from UITextView when user saves.
 	/// - Note: This should automatically trigger a segue back to the main view controller.
-	func checkForSaving(){
+	private func checkForSaving(){
 		NotificationCenter.default.addObserver(self,
 											   selector: #selector(clearNewNote(_:)),
 											   name: NSNotification.Name(ReuseIdentifier.save),
@@ -71,7 +76,7 @@ class AddNote_ViewController: UIViewController {
 	
 	/// Checks device file structure for a .plist file containing temporarily saved note data.
 	/// - Important: Once the data is retrieved the file is removed from disk.
-	func checkForData(){
+	private func checkForData(){
 		
 		if QuickSaveData.retrieveData() != nil {
 			userNoteTextView.text = QuickSaveData.retrieveData()?.userInput
@@ -82,7 +87,7 @@ class AddNote_ViewController: UIViewController {
 	}
 	
 	/// Called when application state is interrupted while note is being created.
-	@objc func autoSave(){
+	@objc private func autoSave(){
 		guard let quickData = userNoteTextView.text else {return}
 		guard quickData != "" else {return}
 		
