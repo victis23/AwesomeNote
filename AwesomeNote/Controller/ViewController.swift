@@ -28,7 +28,8 @@ class ViewController: UIViewController {
 	}
 	
 	// Note Objects that will be displayed in the tableview.
-	var notes : [CDNote] = []
+	// When updated sorts objects by index.
+	var notes : [CDNote] = [] {didSet {notes.sort {$0.index < $1.index}}}
 	
 	//MARK: Application State
 	
