@@ -14,22 +14,22 @@ class ViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	//Persistent container context used to save values to local database.
-	var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
 	//Instance of helper class for saving and retriving items from persistent container.
-	weak var coreDataHelper : Retriever? {
+	weak internal var coreDataHelper : Retriever? {
 		Retriever(context: context)
 	}
 	
 	// Instance of Core Data Note Object.
-	weak var note : CDNote? {
+	weak private var note : CDNote? {
 		let note = CDNote(context: context)
 		return note
 	}
 	
 	// Note Objects that will be displayed in the tableview.
 	// When updated sorts objects by index.
-	var notes : [CDNote] = [] {didSet {notes.sort {$0.index < $1.index}}}
+	internal var notes : [CDNote] = [] {didSet {notes.sort {$0.index < $1.index}}}
 	
 	//MARK: Application State
 	
@@ -130,7 +130,7 @@ class ViewController: UIViewController {
 	
 	/// Sets the preview test user sees for each note added to tableview.
 	/// - Important: The max length for preview is 4 words.
-	func setTitle(_ displayTitle : [String.SubSequence], _ setTitleIncoming : String)->String{
+	private func setTitle(_ displayTitle : [String.SubSequence], _ setTitleIncoming : String)->String{
 		
 		//Holds preview text.
 		var setTitle = setTitleIncoming
@@ -170,7 +170,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	func checkForInterruption(){
+	private func checkForInterruption(){
 		
 		if QuickSaveData.retrieveData() != nil {
 			performSegue(withIdentifier: "resume", sender: self)
