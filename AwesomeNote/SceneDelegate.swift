@@ -2,8 +2,8 @@
 //  SceneDelegate.swift
 //  AwesomeNote
 //
-//  Created by Scott Leonard on 3/30/20.
-//  Copyright © 2020 DuhMarket. All rights reserved.
+//  Created by Michael Wells on 3/30/2020
+//  Copyright © 2019 Michael Wells. All rights reserved.
 //
 
 import UIKit

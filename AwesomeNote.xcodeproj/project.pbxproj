@@ -16,6 +16,12 @@
 		7D27FDFC24326A3C0060DC29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */; };
 		7D27FE0724326A3C0060DC29 /* AwesomeNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE0624326A3C0060DC29 /* AwesomeNoteTests.swift */; };
 		7D27FE1224326A3C0060DC29 /* AwesomeNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE1124326A3C0060DC29 /* AwesomeNoteUITests.swift */; };
+		7D27FE2024326AA90060DC29 /* ViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE1F24326AA90060DC29 /* ViewController+.swift */; };
+		7D27FE2224326AE80060DC29 /* AddNote+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */; };
+		7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2524326B3A0060DC29 /* Cell+ViewController.swift */; };
+		7D27FE2924326BAB0060DC29 /* Note+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2824326BAB0060DC29 /* Note+Model.swift */; };
+		7D27FE2B24326C460060DC29 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2A24326C460060DC29 /* Keys.swift */; };
+		7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,12 @@
 		7D27FE0D24326A3C0060DC29 /* AwesomeNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AwesomeNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D27FE1124326A3C0060DC29 /* AwesomeNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwesomeNoteUITests.swift; sourceTree = "<group>"; };
 		7D27FE1324326A3C0060DC29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D27FE1F24326AA90060DC29 /* ViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+.swift"; sourceTree = "<group>"; };
+		7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddNote+ViewController.swift"; sourceTree = "<group>"; };
+		7D27FE2524326B3A0060DC29 /* Cell+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+ViewController.swift"; sourceTree = "<group>"; };
+		7D27FE2824326BAB0060DC29 /* Note+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+Model.swift"; sourceTree = "<group>"; };
+		7D27FE2A24326C460060DC29 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickSave+Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +113,17 @@
 		7D27FDEB24326A3C0060DC29 /* AwesomeNote */ = {
 			isa = PBXGroup;
 			children = (
+				7D27FE2724326B650060DC29 /* Models */,
+				7D27FE2424326B1C0060DC29 /* Views */,
+				7D27FE2324326B080060DC29 /* Controller */,
 				7D27FDEC24326A3C0060DC29 /* AppDelegate.swift */,
 				7D27FDEE24326A3C0060DC29 /* SceneDelegate.swift */,
-				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
 				7D27FDF224326A3C0060DC29 /* Main.storyboard */,
 				7D27FDF824326A3C0060DC29 /* Assets.xcassets */,
 				7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */,
 				7D27FDFD24326A3C0060DC29 /* Info.plist */,
 				7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */,
+				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 			);
 			path = AwesomeNote;
 			sourceTree = "<group>";
@@ -129,6 +144,41 @@
 				7D27FE1324326A3C0060DC29 /* Info.plist */,
 			);
 			path = AwesomeNoteUITests;
+			sourceTree = "<group>";
+		};
+		7D27FE2324326B080060DC29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
+				7D27FE1F24326AA90060DC29 /* ViewController+.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7D27FE2424326B1C0060DC29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FE2524326B3A0060DC29 /* Cell+ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D27FE2724326B650060DC29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FE2C24326C850060DC29 /* Helpers */,
+				7D27FE2824326BAB0060DC29 /* Note+Model.swift */,
+				7D27FE2A24326C460060DC29 /* Keys.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7D27FE2C24326C850060DC29 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +314,14 @@
 			files = (
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
 				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
+				7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */,
 				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
+				7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */,
 				7D27FDF724326A3C0060DC29 /* AwesomeNote.xcdatamodeld in Sources */,
+				7D27FE2924326BAB0060DC29 /* Note+Model.swift in Sources */,
+				7D27FE2224326AE80060DC29 /* AddNote+ViewController.swift in Sources */,
+				7D27FE2B24326C460060DC29 /* Keys.swift in Sources */,
+				7D27FE2024326AA90060DC29 /* ViewController+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
