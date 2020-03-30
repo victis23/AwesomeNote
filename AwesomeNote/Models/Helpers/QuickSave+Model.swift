@@ -9,7 +9,11 @@
 import Foundation
 
 struct QuickSaveData : Codable {
+	
 	var userInput : String
+}
+
+extension QuickSaveData {
 	
 	static func createURL()->URL{
 		let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
