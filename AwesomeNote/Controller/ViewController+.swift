@@ -9,15 +9,20 @@
 import UIKit
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
+	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		
 		let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifier.key, for: indexPath) as! theCell
 		
 		let notesArray = notes[indexPath.row]
-		cell.backgroundColor = .white
-		cell.titleLabel.text = notesArray.title
-		let firstSentenceToDisplay = notesArray.noteContent.split(separator: ".")
-		cell.descriptionLabel.text = "\(String(firstSentenceToDisplay[0]))."
-		cell.updateCustomConstraints()
+		
+		if let content = notesArray.content {
+			cell.backgroundColor = .white
+			cell.titleLabel.text = notesArray.title
+			let firstSentenceToDisplay = content.split(separator: ".")
+			cell.descriptionLabel.text = "\(String(firstSentenceToDisplay[0]))."
+			cell.updateCustomConstraints()
+		}
 		
 		return cell
 	}
