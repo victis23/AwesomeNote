@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+/// Helps controller perform CRUD on persistent container.
 class Retriever {
 	
 	private var context : NSManagedObjectContext
@@ -17,7 +18,7 @@ class Retriever {
 		self.context = context
 	}
 	
-	//Returns array of CDNote Objects from Persistent Container.
+	///Returns array of CDNote Objects from Persistent Container.
 	public func retrieveFromCoreData(query : NSPredicate? = nil) -> [CDNote]?{
 		
 		let _fetchRequest = NSFetchRequest<CDNote>(entityName: "CDNote")
@@ -32,7 +33,7 @@ class Retriever {
 		return _notes
 	}
 	
-	//Updates Persistent Container.
+	/// Updates Persistent Container.
 	public func saveInCoreData(){
 		do {
 			try context.save()
@@ -42,6 +43,7 @@ class Retriever {
 		}
 	}
 	
+	/// Instance removes an object from the persistent container and saves the context.
 	public func remove(object: Any){
 		
 		guard let _coredataObject = object as? NSManagedObject else {return}
@@ -61,7 +63,6 @@ class Retriever {
 		let tempIndex = note1.index
 		note1.index = note2.index
 		note2.index = tempIndex
-		
-		print("\(note1.index) | \(note2.index)")
+		self.saveInCoreData()
 	}
 }
