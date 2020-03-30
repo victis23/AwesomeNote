@@ -97,7 +97,21 @@ class AddNote_ViewController: UIViewController {
 	
 	
 	/// Removes all text from UITextView.
-	@objc func clearNewNote(_ : Notification){
+	@objc private func clearNewNote(_ : Notification){
+		
 		userNoteTextView.text = nil
+		
+		setTabsToDisabled(changeState: false)
+	}
+	
+	/// Disables tabs buttons.
+	public func setTabsToDisabled(changeState:Bool){
+		
+		if let tab = self.tabBarController?.tabBar.items {
+			tab.forEach {
+				$0.isEnabled = !changeState
+				print($0.accessibilityElementIsFocused())
+			}
+		}
 	}
 }
