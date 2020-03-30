@@ -75,7 +75,7 @@ class AddNote_ViewController: UIViewController {
 	}
 	
 	/// Checks device file structure for a .plist file containing temporarily saved note data.
-	/// - Important: Once the data is retrieved the file is removed from disk.
+	/// - Important: Once the data is retrieved  the textview is updated and the file is removed from disk.
 	private func checkForData(){
 		
 		if QuickSaveData.retrieveData() != nil {
