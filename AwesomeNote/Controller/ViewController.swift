@@ -9,9 +9,8 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController {
+	
 	@IBOutlet weak var tableView: UITableView!
 	var notes : [Note] = []
 	
@@ -26,11 +25,16 @@ class ViewController: UIViewController {
 		
 	}
 	
-	
 	@IBAction func unwind(segue fromSegue: UIStoryboardSegue){
+		
+		guard let note = note else {return}
+		
 		if fromSegue.identifier == SegueKeys.self.save.rawValue {
+			
 			let saveNoteController = fromSegue.source as! AddNote_ViewController
+			
 			if let indexPath = tableView.indexPathForSelectedRow {
+				
 				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
 				let displayTitle = content.split(separator: " ")
 				var setTitle : String = ""
@@ -89,8 +93,11 @@ class ViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
 		if segue.identifier == SegueKeys.self.edit.rawValue {
+			
 			let destination = segue.destination as! AddNote_ViewController
+			
 			guard let indexPath = tableView.indexPathForSelectedRow else {return}
 			let note = notes[indexPath.row]
 			destination.newNote = note
