@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		notes = Note.retrieveData() ?? []
+		notes = coreDataHelper?.retrieveFromCoreData() ?? []
 		checkForInterruption()
 		
 	}
@@ -41,7 +41,9 @@ class ViewController: UIViewController {
 				
 				setTitle = self.setTitle(displayTitle, setTitle)
 				
-				let note = Note(title: setTitle, noteContent: content)
+				note.title = setTitle
+				note.content = content
+				coreDataHelper?.saveInCoreData()
 				
 				notes.remove(at: indexPath.row)
 				notes.insert(note, at: indexPath.row)
@@ -56,10 +58,11 @@ class ViewController: UIViewController {
 				
 				setTitle = self.setTitle(displayTitle, setTitle)
 				
-				let newNote = Note(title: setTitle, noteContent: content)
+				note.title = setTitle
+				note.content = content
 				
-				notes.append(newNote)
-				Note.saveData(userData: notes)
+				notes.append(note)
+				coreDataHelper?.saveInCoreData()
 				tableView.reloadData()
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
 			}
