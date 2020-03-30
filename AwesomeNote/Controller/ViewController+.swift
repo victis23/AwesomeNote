@@ -39,9 +39,13 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 	
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-		notes.remove(at: indexPath.row)
+		
+		let removedObject = notes.remove(at: indexPath.row)
+		
+		coreDataHelper?.remove(object: removedObject)
+		
 		tableView.deleteRows(at: [indexPath], with: .fade)
-		Note.saveData(userData: notes)
+		
 	}
 	
 	func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -51,8 +55,10 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
 		
 		print(notes)
+		
 		let movedValue = notes.remove(at: sourceIndexPath.row)
 		notes.insert(movedValue, at: destinationIndexPath.row)
+		
 		print(notes)
 		Note.saveData(userData: notes)
 	}
