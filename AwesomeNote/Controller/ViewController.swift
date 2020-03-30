@@ -53,6 +53,9 @@ class ViewController: UIViewController {
 			
 			let saveNoteController = fromSegue.source as! AddNote_ViewController
 			
+			//Enables tab button for new notes.
+			saveNoteController.setTabsToDisabled(changeState: false)
+			
 			if let indexPath = tableView.indexPathForSelectedRow {
 				
 				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
