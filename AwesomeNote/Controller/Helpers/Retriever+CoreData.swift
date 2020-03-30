@@ -51,9 +51,17 @@ class Retriever {
 		
 	}
 	
-//	public func swap(_ object: Any, with object2: Any){
-//		guard let object1 = object as? NSManagedObject,
-//			let object2 = object2 as? NSManagedObject else {return}
-//
-//	}
+	/// Instance method swaps to coredata objects index property which will affect how they are sorted upon retrieval.
+	public func swap(_ object: Any, with object2: Any){
+		guard let object1 = object as? NSManagedObject,
+			let object2 = object2 as? NSManagedObject,
+			let note1 = object1 as? CDNote,
+			let note2 = object2 as? CDNote else {return}
+		
+		let tempIndex = note1.index
+		note1.index = note2.index
+		note2.index = tempIndex
+		
+		print("\(note1.index) | \(note2.index)")
+	}
 }
