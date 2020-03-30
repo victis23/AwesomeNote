@@ -110,7 +110,6 @@ class AddNote_ViewController: UIViewController {
 		if let tab = self.tabBarController?.tabBar.items {
 			tab.forEach {
 				$0.isEnabled = !changeState
-				print($0.accessibilityElementIsFocused())
 			}
 		}
 	}
