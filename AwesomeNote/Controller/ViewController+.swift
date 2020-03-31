@@ -17,10 +17,18 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 		let notesArray = notes[indexPath.row]
 		
 		if let content = notesArray.content {
-			cell.backgroundColor = .white
+			
+			//Background on entire cell.
+			cell.backgroundColor = .clear
+			
+			//Title.
 			cell.titleLabel.text = notesArray.title
+			cell.titleLabel.textColor = .white
+			
+			//Description.
 			let firstSentenceToDisplay = content.split(separator: ".")
 			cell.descriptionLabel.text = "\(String(firstSentenceToDisplay[0]))."
+			cell.descriptionLabel.textColor = .white
 			cell.updateCustomConstraints()
 		}
 		
