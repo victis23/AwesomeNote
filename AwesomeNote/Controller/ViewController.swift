@@ -93,7 +93,7 @@ class ViewController: UIViewController {
 				//If you use an integer here you'll get a memory mismatch error.
 				let query = NSPredicate(format: "index = %@", NSNumber(value: indexPath.row + 1))
 				
-				guard let content = saveNoteController.userNoteTextView.text, content != "",
+				guard let content = saveNoteController.userNoteTextView.text, content != "",content != " ",
 					let object = coreDataHelper?.retrieveFromCoreData(query: query) else {return}
 				
 				//Deletes objects with matching index from coredata.
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
 				
 				// Executes on first save.
 				
-				guard let content = saveNoteController.userNoteTextView.text, content != "" else {return}
+				guard let content = saveNoteController.userNoteTextView.text, content != "", content != " " else {return}
 				let displayTitle = content.split(separator: " ")
 				var setTitle : String = ""
 				
