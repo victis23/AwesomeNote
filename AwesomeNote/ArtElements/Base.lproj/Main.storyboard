@@ -33,7 +33,7 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" id="apV-Yw-mt5">
-                                        <rect key="frame" x="0.0" y="177" width="414" height="534"/>
+                                        <rect key="frame" x="0.0" y="177" width="414" height="689"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -78,7 +78,7 @@
             <objects>
                 <viewController id="tgm-o3-QfB" customClass="CollectionView_Child_Main" customModule="AwesomeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4lA-FN-sXp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="534"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="689"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Nla-G5-jx8">
@@ -121,6 +121,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="n1M-ss-8PY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Nla-G5-jx8" id="dLu-ov-k9E"/>

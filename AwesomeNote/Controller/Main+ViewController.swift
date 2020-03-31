@@ -19,6 +19,7 @@ class Main_ViewController: UIViewController {
 		setBackground()
 		setEditButtonColor()
 		childView.backgroundColor = .clear
+		childView.layer.cornerRadius = 10
 	}
 	
 	///Sets background on childview to gradient.
