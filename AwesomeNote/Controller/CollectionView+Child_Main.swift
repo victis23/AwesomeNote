@@ -41,6 +41,9 @@ class CollectionView_Child_Main: UIViewController {
 	
 	func setupCollectionViewAesthetics(){
 		collectionView.layer.cornerRadius = 10
+		collectionView.layer.shadowOpacity = 0.4
+		collectionView.layer.shadowOffset = CGSize(width: 0, height: 5)
+		collectionView.layer.shadowRadius = 5
 	}
 	
 	func setupCellLayout(){
