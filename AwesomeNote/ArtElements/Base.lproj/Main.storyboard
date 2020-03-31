@@ -186,6 +186,7 @@
                         <viewLayoutGuide key="safeArea" id="n1M-ss-8PY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonStack" destination="T5V-Bs-VcS" id="2lz-Ze-rB5"/>
                         <outlet property="collectionView" destination="Nla-G5-jx8" id="dLu-ov-k9E"/>
                     </connections>
                 </viewController>
