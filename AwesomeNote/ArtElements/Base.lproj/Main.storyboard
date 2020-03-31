@@ -73,7 +73,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notes" largeTitleDisplayMode="always" id="KMy-QB-kjS">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="8J1-VK-HeW">
-                            <color key="tintColor" red="1" green="0.62386004959999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="edit:" destination="dRr-lK-id2" id="WDy-Ii-jx2"/>
                             </connections>
