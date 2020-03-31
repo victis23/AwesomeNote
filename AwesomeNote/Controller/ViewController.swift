@@ -57,12 +57,12 @@ class ViewController: UIViewController {
 		
 		let gradient = CAGradientLayer()
 		gradient.type = .axial
-		gradient.colors = [UIColor(red: 0.25, green: 0.39, blue: 0.10, alpha: 1).cgColor, UIColor.white.cgColor]
+		gradient.colors = [UIColor(red: 0.05, green: 0.2, blue: 1, alpha: 0.8).cgColor, UIColor(red: 0.05, green: 0.2, blue: 1, alpha: 0.6).cgColor]
 		
 		//Bottom Y | Right X
-		gradient.startPoint = CGPoint(x: 0, y: 0.20)
+		gradient.startPoint = CGPoint(x: 0.25, y: 1)
 		//Top Y | Left X
-		gradient.endPoint = CGPoint(x: 0, y: 1)
+		gradient.endPoint = CGPoint(x: 0.25, y: 1)
 		gradient.frame = view.bounds
 		
 		let newView = UIView()
