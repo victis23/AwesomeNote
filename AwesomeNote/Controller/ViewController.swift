@@ -32,6 +32,8 @@ class ViewController: UIViewController {
 	// When updated sorts objects by index.
 	internal var notes : [CDNote] = [] {didSet {notes.sort {$0.index < $1.index}}}
 	
+	var isEditingRowForIndexPath : (Bool,IndexPath?) = (false,nil)
+	
 	//MARK: Application State
 	
 	/// Sets delegate & datasource for tableview
@@ -85,7 +87,7 @@ class ViewController: UIViewController {
 			saveNoteController.setTabsToDisabled(changeState: false)
 			
 			// If statement checks whether value is being edited or is a new entry.
-			if let indexPath = tableView.indexPathForSelectedRow {
+			if let indexPath = isEditingRowForIndexPath.1 {
 				
 				//Taken from Objective-C / Remember that CoreData stores numbers as NSNumber objects.
 				//If you use an integer here you'll get a memory mismatch error.
@@ -116,8 +118,7 @@ class ViewController: UIViewController {
 				//Writes updated version of note to Array.
 				notes.insert(note, at: indexPath.row)
 				
-				//Deselects row and reloads table.
-				tableView.deselectRow(at: indexPath, animated: true)
+				isEditingRowForIndexPath.0 = false
 				tableView.reloadData()
 				
 				//
