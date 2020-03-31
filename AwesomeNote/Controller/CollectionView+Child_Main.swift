@@ -12,6 +12,8 @@ class CollectionView_Child_Main: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
+	var dataSource : UICollectionViewDiffableDataSource<Section,Notes>?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupCollectionViewAesthetics()
