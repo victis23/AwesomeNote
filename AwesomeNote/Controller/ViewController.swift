@@ -45,7 +45,9 @@ class ViewController: UIViewController {
 		checkForInterruption()
 		setBackgroundColor()
 		
-		
+		//Set color of title.
+//		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 	}
 	
 	///Sets background color on entire view.
