@@ -15,8 +15,19 @@ class CollectionView_Child_Main: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		collectionView.layer.cornerRadius = 10
-//		collectionView.backgroundColor = .clear
-    }
+	}
+	
+	func setupCellLayout(){
+		let cellSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+		let cell = NSCollectionLayoutItem(layoutSize: cellSize)
+		cell.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20)
+		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: cell, count: 1)
+		let section = NSCollectionLayoutSection(group: group)
+		section.orthogonalScrollingBehavior = .continuous
+		let layout = UICollectionViewCompositionalLayout(section: section)
+		self.collectionView.collectionViewLayout = layout
+	}
     
 
     /*
