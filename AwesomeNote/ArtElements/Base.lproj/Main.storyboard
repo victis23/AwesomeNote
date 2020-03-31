@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nla-G5-jx8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="569"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lc8-KD-SHy">
                                     <size key="itemSize" width="414" height="493"/>
@@ -106,83 +106,82 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="493"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AaV-Tn-4nS">
-                                                    <rect key="frame" x="10" y="10" width="394" height="473"/>
-                                                    <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-3l-0q5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="406"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                            <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        </textView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T5V-Bs-VcS">
-                                                            <rect key="frame" x="128" y="416" width="266" height="57"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmJ-nQ-bQC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="57"/>
-                                                                    <state key="normal" image="location.circle.fill" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-dZ-8ZL">
-                                                                    <rect key="frame" x="69" y="0.0" width="59" height="57"/>
-                                                                    <state key="normal" image="mappin.circle.fill" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ0-g3-U1q">
-                                                                    <rect key="frame" x="138" y="0.0" width="59" height="57"/>
-                                                                    <state key="normal" image="pencil.circle.fill" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <action selector="editButtonTapped:" destination="xoi-Qg-xCJ" eventType="touchUpInside" id="LGx-cK-zQC"/>
-                                                                    </connections>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-Dl-SFg">
-                                                                    <rect key="frame" x="207" y="0.0" width="59" height="57"/>
-                                                                    <state key="normal" image="trash.circle.fill" catalog="system">
-                                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                                                    </state>
-                                                                    <connections>
-                                                                        <action selector="deleteButtonTapped:" destination="xoi-Qg-xCJ" eventType="touchUpInside" id="SWm-cJ-CdB"/>
-                                                                    </connections>
-                                                                </button>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="PKg-3l-0q5" firstAttribute="leading" secondItem="AaV-Tn-4nS" secondAttribute="leadingMargin" id="YV9-Xp-be6"/>
-                                                    </constraints>
-                                                </stackView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-3l-0q5">
+                                                    <rect key="frame" x="8" y="8" width="398" height="477"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="AaV-Tn-4nS" firstAttribute="leading" secondItem="gW3-2H-abR" secondAttribute="leading" constant="10" id="gId-e4-ifE"/>
-                                                <constraint firstItem="AaV-Tn-4nS" firstAttribute="centerY" secondItem="gW3-2H-abR" secondAttribute="centerY" id="npU-lX-Dr8"/>
-                                                <constraint firstItem="AaV-Tn-4nS" firstAttribute="centerX" secondItem="gW3-2H-abR" secondAttribute="centerX" id="pVg-nY-vjD"/>
-                                                <constraint firstItem="AaV-Tn-4nS" firstAttribute="top" secondItem="gW3-2H-abR" secondAttribute="top" constant="10" id="zjo-h1-eWL"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PKg-3l-0q5" secondAttribute="trailing" id="OtN-Ps-Pzq"/>
+                                                <constraint firstItem="PKg-3l-0q5" firstAttribute="top" secondItem="gW3-2H-abR" secondAttribute="topMargin" id="URL-He-Wus"/>
+                                                <constraint firstItem="PKg-3l-0q5" firstAttribute="bottom" secondItem="gW3-2H-abR" secondAttribute="bottomMargin" id="dbt-DH-7n2"/>
+                                                <constraint firstItem="PKg-3l-0q5" firstAttribute="leading" secondItem="gW3-2H-abR" secondAttribute="leadingMargin" id="qPc-nG-GMa"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="414" height="493"/>
                                         <connections>
                                             <outlet property="content" destination="PKg-3l-0q5" id="VfR-SX-SeL"/>
-                                            <outlet property="deletebutton" destination="9rx-Dl-SFg" id="3MH-ac-K52"/>
-                                            <outlet property="editButton" destination="gQ0-g3-U1q" id="fJv-EW-4C4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T5V-Bs-VcS">
+                                <rect key="frame" x="128" y="589" width="266" height="57"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmJ-nQ-bQC">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="57"/>
+                                        <state key="normal" image="location.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="locationButton:" destination="tgm-o3-QfB" eventType="touchUpInside" id="Bz1-aT-agk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5n0-dZ-8ZL">
+                                        <rect key="frame" x="69" y="0.0" width="59" height="57"/>
+                                        <state key="normal" image="arrowshape.turn.up.right.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="tgm-o3-QfB" eventType="touchUpInside" id="qZ1-Gc-Fzu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ0-g3-U1q">
+                                        <rect key="frame" x="138" y="0.0" width="59" height="57"/>
+                                        <state key="normal" image="pencil.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editButtonTapped:" destination="tgm-o3-QfB" eventType="touchUpInside" id="Yfb-BM-yDl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rx-Dl-SFg">
+                                        <rect key="frame" x="207" y="0.0" width="59" height="57"/>
+                                        <state key="normal" image="trash.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deletebuttonTapped:" destination="tgm-o3-QfB" eventType="touchUpInside" id="Zk4-Qw-KQ8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nla-G5-jx8" firstAttribute="trailing" secondItem="n1M-ss-8PY" secondAttribute="trailing" id="HJt-vl-cWk"/>
                             <constraint firstItem="Nla-G5-jx8" firstAttribute="top" secondItem="4lA-FN-sXp" secondAttribute="top" id="Jmi-Hb-kB6"/>
                             <constraint firstItem="Nla-G5-jx8" firstAttribute="leading" secondItem="n1M-ss-8PY" secondAttribute="leading" id="RE4-O5-ZPz"/>
-                            <constraint firstItem="n1M-ss-8PY" firstAttribute="bottom" secondItem="Nla-G5-jx8" secondAttribute="bottom" constant="42" id="gb5-9a-Hsa"/>
+                            <constraint firstItem="T5V-Bs-VcS" firstAttribute="top" secondItem="Nla-G5-jx8" secondAttribute="bottom" constant="20" id="Yc6-YS-mh8"/>
+                            <constraint firstItem="n1M-ss-8PY" firstAttribute="bottom" secondItem="Nla-G5-jx8" secondAttribute="bottom" constant="120" id="gb5-9a-Hsa"/>
+                            <constraint firstItem="n1M-ss-8PY" firstAttribute="trailing" secondItem="T5V-Bs-VcS" secondAttribute="trailing" constant="20" id="uxw-dC-Mjd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n1M-ss-8PY"/>
                     </view>
@@ -196,8 +195,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="location.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="trash.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
