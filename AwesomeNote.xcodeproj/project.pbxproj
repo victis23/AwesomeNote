@@ -27,6 +27,7 @@
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
+		7D9BF8432433FFD800813563 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8422433FFD800813563 /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Child_Main.swift"; sourceTree = "<group>"; };
 		7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildViewCell+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		7D9BF8402433FF4700813563 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		7D9BF8422433FFD800813563 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				7D27FE2C24326C850060DC29 /* Helpers */,
 				7D27FE2A24326C460060DC29 /* Keys.swift */,
 				7D9BF8402433FF4700813563 /* Notes.swift */,
+				7D9BF8422433FFD800813563 /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9BF8432433FFD800813563 /* Section.swift in Sources */,
 				7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */,
 				7D9BF8412433FF4700813563 /* Notes.swift in Sources */,
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,

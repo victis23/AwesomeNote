@@ -10,12 +10,6 @@ import UIKit
 
 class CollectionView_Child_Main: UIViewController {
 	
-	enum Section {
-		case main
-	}
-	
-	
-	
 	//MARK: -
 	
 	@IBOutlet weak var collectionView: UICollectionView!
