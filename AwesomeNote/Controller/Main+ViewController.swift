@@ -12,11 +12,13 @@ class Main_ViewController: UIViewController {
 	
 	@IBOutlet weak var background : UIView!
 	@IBOutlet weak var editButton : UIButton!
+	@IBOutlet weak var childView: UIView!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setBackground()
 		setEditButtonColor()
+		childView.backgroundColor = .clear
 	}
 	
 	///Sets background on childview to gradient.
