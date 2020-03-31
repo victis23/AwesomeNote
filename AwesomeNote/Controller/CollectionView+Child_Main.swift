@@ -21,9 +21,19 @@ class CollectionView_Child_Main: UIViewController {
 		}
 	}
 	
-	var notes : [Notes] = []
+	//MARK: -
 	
 	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var buttonStack: UIStackView!
+	
+	/// Instance of helper class that is used for managing core data objects.
+	let retriever = Retriever(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+	
+	var notes : [Notes] = [] {
+		didSet {
+			notes.sort {$0.note.index < $1.note.index}
+		}
+	}
 	
 	var dataSource : UICollectionViewDiffableDataSource<Section,Notes>?
 	
@@ -41,10 +51,10 @@ class CollectionView_Child_Main: UIViewController {
 		setSnapShot()
 	}
 	
+	/// Transforms coredata objects into `Notes` and appends each to `notes` array.
 	func retrieveNotes(){
 		
 		notes = []
-		let retriever = Retriever(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
 		if let cdNotes = retriever?.retrieveFromCoreData() {
 			
 			cdNotes.forEach {
@@ -69,24 +79,32 @@ class CollectionView_Child_Main: UIViewController {
 	
 	/// Sets general aesthetic of collection view.
 	func setupCollectionViewAesthetics(){
+		
 		collectionView.layer.cornerRadius = 10
 		collectionView.layer.shadowOpacity = 0.4
 		collectionView.layer.shadowOffset = CGSize(width: 5, height: 1)
 		collectionView.layer.shadowRadius = 5
 	}
 	
+	/// Sets layout of collection view using compositional layout.
 	func setupCellLayout(){
+		
 		let cellSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
 		let cell = NSCollectionLayoutItem(layoutSize: cellSize)
 		cell.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20)
+		
 		let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
 		let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: cell, count: 1)
+		
 		let section = NSCollectionLayoutSection(group: group)
 		section.orthogonalScrollingBehavior = .continuous
+		
 		let layout = UICollectionViewCompositionalLayout(section: section)
+		
 		self.collectionView.collectionViewLayout = layout
 	}
     
+	///Sets up datasource used by collection view.
 	func setDataSource() {
 		
 		dataSource = UICollectionViewDiffableDataSource<Section,Notes>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, note) -> UICollectionViewCell? in
@@ -98,18 +116,33 @@ class CollectionView_Child_Main: UIViewController {
 		})
 	}
 	
+	///Sets up snapshot (Source of truth) for collection view.
 	func setSnapShot() {
 		
 		var snapshot = NSDiffableDataSourceSnapshot<Section,Notes>()
 		snapshot.appendSections([.main])
 		snapshot.appendItems(notes, toSection: .main)
-		dataSource?.apply(snapshot, animatingDifferences: true, completion: {})
+		dataSource?.apply(snapshot, animatingDifferences: true, completion: { [weak self] in
+			if let notes = self?.notes {
+				self?.animateButtonStack(hide: notes.isEmpty)
+			}
+		})
 	}
 	
-	
+	/// Removes object from Array & Coredata stack.
 	@IBAction func deletebuttonTapped(_ sender: UIButton) {
 		
+		if let visibleItems = collectionView.indexPathsForVisibleItems.first {
+			let objectAtIndex = dataSource?.itemIdentifier(for: visibleItems)
+			notes.remove(at: visibleItems.item)
+			setSnapShot()
+			
+			if let object = objectAtIndex?.note {
+				retriever?.remove(object: object)
+			}
+		}
 	}
+	
 	@IBAction func editButtonTapped(_ sender: Any) {
 	}
 	@IBAction func shareButtonTapped(_ sender: Any) {
