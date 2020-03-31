@@ -10,4 +10,5 @@ import UIKit
 
 class ChildViewCell_CollectionViewCell: UICollectionViewCell {
     
+	@IBOutlet weak var content: UITextView!
 }
