@@ -12,13 +12,14 @@ class Main_ViewController: UIViewController {
 	
 	@IBOutlet weak var background : UIView!
 	@IBOutlet weak var editButton : UIButton!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		setBackground()
 		setEditButtonColor()
-    }
+	}
 	
+	///Sets background on childview to gradient.
 	func setBackground(){
 		
 		let gradient = CAGradientLayer()
@@ -32,9 +33,17 @@ class Main_ViewController: UIViewController {
 		background.layer.addSublayer(gradient)
 	}
 	
-
-    
-
-    
-
+	///Sets SF Pro Symbol to label of button.
+	func setEditButtonColor(){
+		
+		let image = UIImage(systemName: "slider.horizontal.3")
+		editButton.setTitle("", for: .normal)
+		editButton.tintColor = .white
+		editButton.setImage(image, for: .normal)
+		editButton.contentVerticalAlignment = .fill
+		editButton.contentHorizontalAlignment = .fill
+		editButton.bounds = CGRect(origin: view.center, size: CGSize(width: 70, height: 50))
+		
+	}
+	
 }
