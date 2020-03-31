@@ -10,6 +10,19 @@ import UIKit
 
 class CollectionView_Child_Main: UIViewController {
 	
+	enum Section {
+		case main
+	}
+	
+	struct Notes : Hashable {
+		var note : CDNote
+		var id :Int {
+			Int(note.index)
+		}
+	}
+	
+	var notes : [Notes] = []
+	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
 	var dataSource : UICollectionViewDiffableDataSource<Section,Notes>?
@@ -19,15 +32,17 @@ class CollectionView_Child_Main: UIViewController {
 		setupCollectionViewAesthetics()
 		setupCellLayout()
 		setDataSource()
-		retrieveNotes()
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		retrieveNotes()
 		setSnapShot()
 	}
 	
 	func retrieveNotes(){
+		
+		notes = []
 		let retriever = Retriever(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
 		if let cdNotes = retriever?.retrieveFromCoreData() {
 			
