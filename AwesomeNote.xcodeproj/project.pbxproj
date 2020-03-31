@@ -23,6 +23,7 @@
 		7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */; };
 		7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */; };
 		7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FE7824335F6B0060DC29 /* Notes.storyboard */; };
+		7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickSave+Model.swift"; sourceTree = "<group>"; };
 		7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retriever+CoreData.swift"; sourceTree = "<group>"; };
 		7D27FE7824335F6B0060DC29 /* Notes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
+		7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				7D27FE3124327A6E0060DC29 /* Helpers */,
 				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
+				7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */,
 				7D27FE1F24326AA90060DC29 /* ViewController+.swift */,
 			);
 			path = Controller;
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */,
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
 				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
 				7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */,
