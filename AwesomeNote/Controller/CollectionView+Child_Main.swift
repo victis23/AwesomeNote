@@ -55,15 +55,22 @@ class CollectionView_Child_Main: UIViewController {
 		self.collectionView.collectionViewLayout = layout
 	}
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	func setDataSource() {
+		
+		dataSource = UICollectionViewDiffableDataSource<Section,Notes>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, note) -> UICollectionViewCell? in
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "note", for: indexPath) as! ChildViewCell_CollectionViewCell
+			cell.layer.cornerRadius = 10
+			cell.backgroundColor = .white
+			cell.content.text = note.note.content
+			return cell
+		})
+	}
+	
+	func setSnapShot() {
+		
+		var snapshot = NSDiffableDataSourceSnapshot<Section,Notes>()
+		snapshot.appendSections([.main])
+		snapshot.appendItems(notes, toSection: .main)
+		dataSource?.apply(snapshot, animatingDifferences: true, completion: {})
+	}
 }
