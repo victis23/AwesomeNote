@@ -54,6 +54,20 @@ class CollectionView_Child_Main: UIViewController {
 		}
 	}
 	
+	/// Hides or Reveals button stack with animation.
+	func animateButtonStack(hide:Bool){
+		if hide {
+			UIView.animate(withDuration: 2, animations: {
+				self.buttonStack.alpha = 0
+			})
+		}else{
+			UIView.animate(withDuration: 2, animations: {
+				self.buttonStack.alpha = 1
+			})
+		}
+	}
+	
+	/// Sets general aesthetic of collection view.
 	func setupCollectionViewAesthetics(){
 		collectionView.layer.cornerRadius = 10
 		collectionView.layer.shadowOpacity = 0.4
