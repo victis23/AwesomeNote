@@ -50,7 +50,6 @@ class CollectionView_Child_Main: UIViewController {
 				let note = Notes(note: $0)
 				notes.append(note)
 			}
-			print(notes)
 		}
 	}
 	
