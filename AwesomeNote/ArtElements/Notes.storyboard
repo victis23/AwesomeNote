@@ -72,6 +72,12 @@
                         <viewLayoutGuide key="safeArea" id="em1-UY-X7N"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notes" largeTitleDisplayMode="always" id="QA0-uK-2JY">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="house.fill" catalog="system" id="Q5h-8o-lSV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="homeButtonTapped:" destination="5gS-LL-vwb" id="7Wc-hR-G4d"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="go4-ut-xDe">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -80,6 +86,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="homeButton" destination="Q5h-8o-lSV" id="Pb8-tF-rQq"/>
                         <outlet property="tableView" destination="YcW-bZ-RgC" id="k8G-j6-ngb"/>
                         <segue destination="sea-AS-7PS" kind="show" identifier="resume" id="0IR-sD-8j5"/>
                     </connections>
@@ -200,6 +207,7 @@
         <segue reference="AeO-hn-6Wj"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
     </resources>

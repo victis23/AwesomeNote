@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	@IBOutlet weak var homeButton: UIBarButtonItem!
 	@IBOutlet weak var tableView: UITableView!
 	
 	//Persistent container context used to save values to local database.
@@ -215,6 +216,11 @@ class ViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.prefersLargeTitles = true
+	}
+	
+	///Returns user to Notes slides.
+	@IBAction func homeButtonTapped(_ sender: UIBarButtonItem) {
+		self.dismiss(animated: true, completion: {})
 	}
 	
 	
