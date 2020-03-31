@@ -62,13 +62,9 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
 		
-		print(notes)
-		
 		let movedValue = notes.remove(at: sourceIndexPath.row)
 		notes.insert(movedValue, at: destinationIndexPath.row)
 		
-		print(notes)
-
 		coreDataHelper?.swap(movedValue, with: notes[destinationIndexPath.row])
 		coreDataHelper?.saveInCoreData()
 		
