@@ -11,14 +11,5 @@ import UIKit
 class ChildViewCell_CollectionViewCell: UICollectionViewCell {
     
 	@IBOutlet weak var content: UITextView!
-	@IBOutlet weak var editButton: UIButton!
-	@IBOutlet weak var deletebutton: UIButton!
-	
-	@IBAction func editButtonTapped(_ sender: UIButton) {
-		print("edit button tapped")
-	}
-	
-	@IBAction func deleteButtonTapped(_ sender: UIButton) {
-		print("delete button tapped")
-	}
+
 }
