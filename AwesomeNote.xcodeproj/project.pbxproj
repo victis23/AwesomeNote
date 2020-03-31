@@ -22,6 +22,7 @@
 		7D27FE2B24326C460060DC29 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2A24326C460060DC29 /* Keys.swift */; };
 		7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */; };
 		7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */; };
+		7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FE7824335F6B0060DC29 /* Notes.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7D27FE2A24326C460060DC29 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		7D27FE2D24326C9A0060DC29 /* QuickSave+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuickSave+Model.swift"; sourceTree = "<group>"; };
 		7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retriever+CoreData.swift"; sourceTree = "<group>"; };
+		7D27FE7824335F6B0060DC29 /* Notes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				7D27FDF824326A3C0060DC29 /* Assets.xcassets */,
 				7D27FDF224326A3C0060DC29 /* Main.storyboard */,
+				7D27FE7824335F6B0060DC29 /* Notes.storyboard */,
 				7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */,
 			);
 			path = ArtElements;
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */,
 				7D27FDFC24326A3C0060DC29 /* LaunchScreen.storyboard in Resources */,
 				7D27FDF924326A3C0060DC29 /* Assets.xcassets in Resources */,
 				7D27FDF424326A3C0060DC29 /* Main.storyboard in Resources */,
