@@ -24,6 +24,8 @@
 		7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */; };
 		7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FE7824335F6B0060DC29 /* Notes.storyboard */; };
 		7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */; };
+		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
+		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retriever+CoreData.swift"; sourceTree = "<group>"; };
 		7D27FE7824335F6B0060DC29 /* Notes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+ViewController.swift"; sourceTree = "<group>"; };
+		7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Child_Main.swift"; sourceTree = "<group>"; };
+		7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildViewCell+CollectionViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
 				7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */,
+				7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */,
 				7D27FE1F24326AA90060DC29 /* ViewController+.swift */,
 			);
 			path = Controller;
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				7D27FE2524326B3A0060DC29 /* Cell+ViewController.swift */,
+				7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,10 +353,12 @@
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
 				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
 				7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */,
+				7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */,
 				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
 				7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */,
 				7D27FDF724326A3C0060DC29 /* AwesomeNote.xcdatamodeld in Sources */,
 				7D27FE2224326AE80060DC29 /* AddNote+ViewController.swift in Sources */,
+				7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */,
 				7D27FE2B24326C460060DC29 /* Keys.swift in Sources */,
 				7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */,
 				7D27FE2024326AA90060DC29 /* ViewController+.swift in Sources */,
