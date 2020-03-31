@@ -43,7 +43,31 @@ class ViewController: UIViewController {
 		
 		notes = coreDataHelper?.retrieveFromCoreData() ?? []
 		checkForInterruption()
+		setBackgroundColor()
 		
+		
+	}
+	
+	///Sets background color on entire view.
+	/// - Important: Removes background color from tableview.
+	private func setBackgroundColor(){
+		tableView.backgroundColor = UIColor.clear
+		
+		let gradient = CAGradientLayer()
+		gradient.type = .axial
+		gradient.colors = [UIColor(red: 0.25, green: 0.39, blue: 0.10, alpha: 1).cgColor, UIColor.white.cgColor]
+		
+		//Bottom Y | Right X
+		gradient.startPoint = CGPoint(x: 0, y: 0.20)
+		//Top Y | Left X
+		gradient.endPoint = CGPoint(x: 0, y: 1)
+		gradient.frame = view.bounds
+		
+		let newView = UIView()
+		newView.layer.addSublayer(gradient)
+		
+		self.view.addSubview(newView)
+		view.sendSubviewToBack(newView)
 	}
 	
 	@IBAction func unwind(segue fromSegue: UIStoryboardSegue){
