@@ -14,12 +14,7 @@ class CollectionView_Child_Main: UIViewController {
 		case main
 	}
 	
-	struct Notes : Hashable {
-		var note : CDNote
-		var id :Int {
-			Int(note.index)
-		}
-	}
+	
 	
 	//MARK: -
 	
