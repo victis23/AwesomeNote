@@ -73,8 +73,12 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 		coreDataHelper?.saveInCoreData()
 		
 	}
-	
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		//Used to determine if row is being edited.
+		isEditingRowForIndexPath = (true,indexPath)
+		
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	
