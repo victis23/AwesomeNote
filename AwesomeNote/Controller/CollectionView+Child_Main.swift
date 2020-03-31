@@ -14,6 +14,30 @@ class CollectionView_Child_Main: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		setupCollectionViewAesthetics()
+		setupCellLayout()
+		setDataSource()
+		retrieveNotes()
+    }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		setSnapShot()
+	}
+	
+	func retrieveNotes(){
+		let retriever = Retriever(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+		if let cdNotes = retriever?.retrieveFromCoreData() {
+			
+			cdNotes.forEach {
+				let note = Notes(note: $0)
+				notes.append(note)
+			}
+			print(notes)
+		}
+	}
+	
+	func setupCollectionViewAesthetics(){
 		collectionView.layer.cornerRadius = 10
 	}
 	
