@@ -31,7 +31,7 @@
                                             <segue destination="PCa-Ck-1Tp" kind="presentation" modalPresentationStyle="fullScreen" id="Zkz-Fc-yu6"/>
                                         </connections>
                                     </button>
-                                    <containerView opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apV-Yw-mt5">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apV-Yw-mt5">
                                         <rect key="frame" x="0.0" y="177" width="414" height="689"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
