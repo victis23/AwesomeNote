@@ -15,22 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Qm-QG-lcZ">
-                                <rect key="frame" x="180" y="387" width="55" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VzC-RJ-leq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Qm-QG-lcZ">
+                                <rect key="frame" x="194" y="385" width="30" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit List"/>
                                 <connections>
                                     <segue destination="PCa-Ck-1Tp" kind="presentation" modalPresentationStyle="fullScreen" id="zkY-L8-tOV"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VzC-RJ-leq" firstAttribute="top" secondItem="Uar-Lq-vHy" secondAttribute="top" id="ERz-S7-k8H"/>
+                            <constraint firstAttribute="bottom" secondItem="VzC-RJ-leq" secondAttribute="bottom" id="JBu-3h-ZXe"/>
+                            <constraint firstItem="1U6-fN-uPi" firstAttribute="trailing" secondItem="VzC-RJ-leq" secondAttribute="trailing" id="oWz-hb-UiO"/>
+                            <constraint firstItem="VzC-RJ-leq" firstAttribute="leading" secondItem="1U6-fN-uPi" secondAttribute="leading" id="uLf-JC-6K1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1U6-fN-uPi"/>
                     </view>
+                    <connections>
+                        <outlet property="background" destination="VzC-RJ-leq" id="Cbm-Qx-knx"/>
+                        <outlet property="editButton" destination="8Qm-QG-lcZ" id="qBT-Ma-mdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NJb-uM-ktv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="-135"/>
+            <point key="canvasLocation" x="3311.594202898551" y="-135.26785714285714"/>
         </scene>
         <!--tab-->
         <scene sceneID="94m-p6-oRp">
