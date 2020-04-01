@@ -26,15 +26,44 @@ class AddNote_ViewController: UIViewController {
 		
 		callObservers()
 		userNoteTextView.becomeFirstResponder()
-		self.title = setTitleOfView
-		
-		// Makes sure title on this screen are always inline(small).
-		navigationController?.navigationBar.prefersLargeTitles = false
+		setNavigationBarAppearance()
+		userNoteTextView.textColor = UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 1)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		setTabsToDisabled(changeState: true)
+		self.modalPresentationCapturesStatusBarAppearance = true
+	}
+	
+	override var childForStatusBarHidden: UIViewController? {
+		setNeedsStatusBarAppearanceUpdate()
+		return self
+	}
+	
+	override var prefersStatusBarHidden: Bool {
+		get{
+			return true
+		}
+	}
+	
+	func setNavigationBarAppearance(){
+		
+		self.title = setTitleOfView
+		
+		// Makes sure title on this screen are always inline(small).
+		navigationController?.navigationBar.prefersLargeTitles = false
+		
+		//Sets color for inline title to white.
+		navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+		
+		//Sets color for menu bar buttons to white.
+		navigationController?.navigationBar.tintColor = .white
+		navigationController?.navigationBar.barStyle = .default
+		navigationController?.navigationBar.isTranslucent = true
+		
+		//Sets navigationbar background color.
+		navigationController?.navigationBar.barTintColor = UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 1)
 	}
 	
 	/// Contains bundle of observers used to monitor application state.
