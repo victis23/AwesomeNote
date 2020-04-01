@@ -34,21 +34,9 @@ struct Login: View {
 						VStack{
 							ApplicationTitleHeader()
 							
-							Form {
-								TextField("UserName", text: $username, onCommit: {})
-									.padding()
-								TextField("Email", text: $email, onEditingChanged: {_ in}, onCommit: {})
-									.padding()
-								TextField("Password", text: $password, onCommit: {})
-									.padding()
-								TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in}, onCommit: {})
-									.padding()
-							}
-							.font(Font.largeTitle)
-							.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
-							.introspectTableView(customize: { item in
-								item.backgroundColor = .white
-							})
+							QuestionTableView(username: $username, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, isCreatingAccount: $isCreatingAccount)
+							
+							CreateAccountButton(iscreatingAccount: $isCreatingAccount)
 							
 							Spacer()
 							
