@@ -51,9 +51,12 @@ struct Login: View {
 							})
 							
 							Spacer()
-							SubmitButton(isPresenting: $isCreatingAccount, imageName: "person.crop.circle.fill.badge.plus", function: "Create Account")
-							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login")
+							
+							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login", helper: _awsHelper)
 								.padding(.bottom, 100)
+								.disabled(isValidAccount ? false : true)
+								.opacity(isValidAccount ? 1 : 0.2)
+								.animation(Animation.easeIn(duration: 1))
 						}
 					}
 				}
