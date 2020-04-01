@@ -103,7 +103,10 @@ struct SubmitButton: View {
 				
 			,isActive: $isPresenting) {
 				Button(action: {
-					self.isPresenting.toggle()
+					//Runs method on helper class using newly inputed credentials.
+					self.awsHelper.performSignUp()
+					//If login is successful value is updated to true and user is given access to data.
+					self.isPresenting = self.awsHelper.isSignedIn
 				}) {
 					HStack{
 						Group{
