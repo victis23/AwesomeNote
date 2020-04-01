@@ -10,6 +10,11 @@
             "StackName": "amplify-awesomenote-anoteenv-142903",
             "StackId": "arn:aws:cloudformation:us-east-1:445192754881:stack/amplify-awesomenote-anoteenv-142903/ab7d9bd0-7446-11ea-a2c4-12bdd946785e",
             "AmplifyAppId": "dg4bb3d98n0hz"
+        },
+        "categories": {
+            "auth": {
+                "awesomenotefaa8e4a4": {}
+            }
         }
     }
 }
