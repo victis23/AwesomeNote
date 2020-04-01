@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "EmailVerifier",
+        "repositoryURL": "https://github.com/victis23/EmailVerification-StringExtensionPackage.git",
+        "state": {
+          "branch": "master",
+          "revision": "aeccbd223d96cabe3cf4fcd325a8b8922383d340",
+          "version": null
+        }
+      },
+      {
         "package": "Introspect",
         "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
         "state": {

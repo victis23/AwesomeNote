@@ -36,6 +36,7 @@
 		7D75F41D2434F48700841DB6 /* Strings+UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F41C2434F48700841DB6 /* Strings+UIScreen.swift */; };
 		7D75F41F2435194E00841DB6 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D75F41E2435194E00841DB6 /* awsconfiguration.json */; };
 		7D75F42124351C8900841DB6 /* AWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F42024351C8900841DB6 /* AWSHelper.swift */; };
+		7D75F424243550A300841DB6 /* EmailVerifier in Frameworks */ = {isa = PBXBuildFile; productRef = 7D75F423243550A300841DB6 /* EmailVerifier */; };
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
@@ -113,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D75F424243550A300841DB6 /* EmailVerifier in Frameworks */,
 				7D75F41B2434D86C00841DB6 /* Introspect in Frameworks */,
 				BF31F8FCEB43444F9855591D /* Pods_AwesomeNote.framework in Frameworks */,
 			);
@@ -336,6 +338,7 @@
 			name = AwesomeNote;
 			packageProductDependencies = (
 				7D75F41A2434D86C00841DB6 /* Introspect */,
+				7D75F423243550A300841DB6 /* EmailVerifier */,
 			);
 			productName = AwesomeNote;
 			productReference = 7D27FDE924326A3C0060DC29 /* AwesomeNote.app */;
@@ -414,6 +417,7 @@
 			mainGroup = 7D27FDE024326A3C0060DC29;
 			packageReferences = (
 				7D75F4192434D86C00841DB6 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+				7D75F422243550A300841DB6 /* XCRemoteSwiftPackageReference "EmailVerification-StringExtensionPackage" */,
 			);
 			productRefGroup = 7D27FDEA24326A3C0060DC29 /* Products */;
 			projectDirPath = "";
@@ -930,6 +934,14 @@
 				minimumVersion = 0.1.0;
 			};
 		};
+		7D75F422243550A300841DB6 /* XCRemoteSwiftPackageReference "EmailVerification-StringExtensionPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/victis23/EmailVerification-StringExtensionPackage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -937,6 +949,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D75F4192434D86C00841DB6 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
 			productName = Introspect;
+		};
+		7D75F423243550A300841DB6 /* EmailVerifier */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D75F422243550A300841DB6 /* XCRemoteSwiftPackageReference "EmailVerification-StringExtensionPackage" */;
+			productName = EmailVerifier;
 		};
 /* End XCSwiftPackageProductDependency section */
 
