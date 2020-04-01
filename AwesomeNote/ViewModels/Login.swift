@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Introspect
+import EmailVerifier
 
 /// Handles user authentication.
 struct Login: View {
@@ -17,6 +18,7 @@ struct Login: View {
 	@State private var isPresenting : Bool = false
 	@State private var isCreatingAccount :Bool = false
 	@State private var isValidAccount :Bool = false
+	@State private var isloggingIn :Bool = false
 	
 	@State private var username: String = ""
 	@State private var email : String = ""
@@ -40,11 +42,12 @@ struct Login: View {
 							
 							Spacer()
 							
-							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login", helper: _awsHelper)
+							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login", helper: _awsHelper, isNewAccount: $isCreatingAccount)
 								.padding(.bottom, 100)
 								.disabled(isValidAccount ? false : true)
 								.opacity(isValidAccount ? 1 : 0.2)
 								.animation(Animation.easeIn(duration: 1))
+							
 						}
 					}
 				}
@@ -74,15 +77,17 @@ struct Login_Previews: PreviewProvider {
 struct SubmitButton: View {
 	
 	@Binding private var isPresenting : Bool
+	@Binding private var isNewAccount : Bool
 	@ObservedObject private var awsHelper : AWSHelper
 	private var function : String
 	private var imageName : String
 	
-	init(isPresenting: Binding<Bool>, imageName:String, function:String, helper:ObservedObject<AWSHelper>){
+	init(isPresenting: Binding<Bool>, imageName:String, function:String, helper:ObservedObject<AWSHelper>, isNewAccount: Binding<Bool>){
 		self._isPresenting = isPresenting
 		self.function = function
 		self.imageName = imageName
 		self._awsHelper = helper
+		self._isNewAccount = isNewAccount
 	}
 	
 	var body: some View {
@@ -141,11 +146,14 @@ struct ApplicationTitleHeader: View {
 
 struct QuestionTableView: View {
 	
+	@ObservedObject private var awsHelper : AWSHelper
+	
 	@Binding private var username : String
 	@Binding private var email : String
 	@Binding private var password : String
 	@Binding private var passwordConfirmation : String
 	
+	@Binding private var isValidAccount: Bool
 	@Binding private var isCreatingAccount: Bool
 	
 	init(username:Binding<String>, email: Binding<String>, password: Binding<String>, passwordConfirmation: Binding<String>, isCreatingAccount :Binding<Bool>){
@@ -154,6 +162,8 @@ struct QuestionTableView: View {
 		self._email = email
 		self._password = password
 		self._passwordConfirmation = passwordConfirmation
+		self._isValidAccount = isValidAccount
+		self._awsHelper = helper
 		self._isCreatingAccount = isCreatingAccount
 	}
 	
