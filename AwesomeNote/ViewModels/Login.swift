@@ -37,7 +37,7 @@ struct Login: View {
 								.foregroundColor(.black)
 							}
 							Spacer()
-							SubmitButton(isPresenting: $isPresenting, imageName: "person.crop.circle.fill.badge.plus", function: "Create Account")
+							SubmitButton(isPresenting: $isCreatingAccount, imageName: "person.crop.circle.fill.badge.plus", function: "Create Account")
 							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login")
 								.padding(.bottom, 100)
 						}
