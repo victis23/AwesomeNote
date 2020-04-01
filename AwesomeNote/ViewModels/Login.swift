@@ -9,6 +9,7 @@
 import SwiftUI
 import Introspect
 
+/// Handles user authentication.
 struct Login: View {
 	
 	@State var isPresenting : Bool = false
