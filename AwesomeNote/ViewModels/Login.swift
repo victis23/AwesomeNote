@@ -175,6 +175,29 @@ struct QuestionTableView: View {
 		})
 			.frame(height: 375, alignment: .center)
 	}
+	
+	func validateAccountCreds(){
+		
+		if self.isCreatingAccount {
+			if self.password == self.passwordConfirmation && self.email.isValidEmail && self.username != "" && self.password != "" {
+				
+				self.awsHelper.username = self.username
+				self.awsHelper.email = self.email
+				self.awsHelper.password = self.password
+				self.isValidAccount = true
+			}
+		}
+		
+		if !self.isCreatingAccount {
+			if self.email.isValidEmail && self.username != "" && self.password != "" {
+				
+				self.awsHelper.username = self.username
+				self.awsHelper.email = self.email
+				self.awsHelper.password = self.password
+				self.isValidAccount = true
+			}
+		}
+	}
 }
 
 struct CreateAccountButton: View {
