@@ -23,9 +23,12 @@ struct Login: View {
 				//This calculation places it back into its proper position.
 				.position(CGPoint(x: UIScreen.location.maxX / 2, y: UIScreen.location.maxY / 1.687))
 				.edgesIgnoringSafeArea(.all)
+				.introspectViewController(customize: {_ in})
 				
 						   ,isActive: $isPresenting) {
-				Button(action: {self.isPresenting.toggle()}) {
+				Button(action: {
+					self.isPresenting.toggle()
+				}) {
 					Text("Access List")
 				}
 			}

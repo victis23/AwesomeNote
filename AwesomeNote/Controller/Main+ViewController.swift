@@ -20,7 +20,7 @@ class Main_ViewController: UIViewController {
 		setEditButtonColor()
 		childView.backgroundColor = .clear
 		childView.layer.cornerRadius = 10
-		self.navigationController?.navigationBar.isHidden = true
+//		self.navigationController?.navigationBar.isHidden = true
 	}
 	
 	//Set status bar to white.
