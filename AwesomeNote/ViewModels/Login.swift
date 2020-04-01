@@ -97,8 +97,14 @@ struct SubmitButton: View {
 				
 			,isActive: $isPresenting) {
 				Button(action: {
-					//Runs method on helper class using newly inputed credentials.
-					self.awsHelper.performSignUp()
+					
+					if self.isNewAccount {
+						//Runs method on helper class using newly inputed credentials.
+						self.awsHelper.performSignUp()
+					}else{
+						self.awsHelper.performLogin()
+					}
+					
 					//If login is successful value is updated to true and user is given access to data.
 					self.isPresenting = self.awsHelper.isSignedIn
 				}) {
