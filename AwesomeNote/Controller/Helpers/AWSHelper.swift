@@ -13,7 +13,10 @@ class AWSHelper : ObservableObject {
 	
 	@Published var username: String?
 	@Published var password: String?
+	@Published var email: String?
 	@Published var isSignedIn: Bool = false
+	
+	private var aws = AWSMobileClient.default()
 	
 	init(username:String?,password:String?){
 		self.username = username
@@ -23,7 +26,7 @@ class AWSHelper : ObservableObject {
 	
 	///Initialized AWSMobile Singleton and verifies what the user's login state is.
 	func initializeAWS() {
-		AWSMobileClient.default().initialize { [weak self](signInStatus, error) in
+		aws.initialize { [weak self](signInStatus, error) in
 			
 			if let error = error {
 				print(error.localizedDescription)
