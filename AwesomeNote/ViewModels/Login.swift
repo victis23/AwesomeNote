@@ -34,7 +34,8 @@ struct Login: View {
 								.foregroundColor(.black)
 							}
 							Spacer()
-							SubmitButton(isPresenting: $isPresenting)
+							SubmitButton(isPresenting: $isPresenting, imageName: "person.crop.circle.fill.badge.plus", function: "Create Account")
+							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login")
 								.padding(.bottom, 100)
 						}
 					}
@@ -57,9 +58,13 @@ struct Login_Previews: PreviewProvider {
 struct SubmitButton: View {
 	
 	@Binding private var isPresenting : Bool
+	private var function : String
+	private var imageName : String
 	
-	init(isPresenting: Binding<Bool>){
+	init(isPresenting: Binding<Bool>, imageName:String, function:String){
 		self._isPresenting = isPresenting
+		self.function = function
+		self.imageName = imageName
 	}
 	
 	var body: some View {
@@ -78,13 +83,12 @@ struct SubmitButton: View {
 				}) {
 					HStack{
 						Group{
-							Text("Login")
+							Text(function)
 								.fontWeight(.bold)
-							Image(systemName: "lock.icloud.fill")
+							Image(systemName: imageName)
 						}
 						.font(.system(size: 40))
 					}
-					
 				}
 			}
 		}
