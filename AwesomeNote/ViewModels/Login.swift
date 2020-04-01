@@ -159,15 +159,23 @@ struct QuestionTableView: View {
 	
 	var body: some View {
 		Form {
-			TextField("UserName", text: $username, onCommit: {})
+			TextField("UserName", text: $username, onCommit: {
+				self.validateAccountCreds()
+			})
 				.padding()
-			TextField("Email", text: $email, onEditingChanged: {_ in}, onCommit: {})
+			TextField("Email", text: $email, onEditingChanged: {_ in}, onCommit: {
+				self.validateAccountCreds()
+			})
 				.padding()
-			TextField("Password", text: $password, onCommit: {})
+			TextField("Password", text: $password, onCommit: {
+				self.validateAccountCreds()
+			})
 				.padding()
 			
 			//								if isCreatingAccount {
-			TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in}, onCommit: {})
+			TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in}, onCommit: {
+				self.validateAccountCreds()
+			})
 				.padding()
 				.opacity(isCreatingAccount ? 1 : 0)
 				.animation(Animation.easeIn(duration: 1))
