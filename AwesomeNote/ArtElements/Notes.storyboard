@@ -189,7 +189,7 @@
         <!--New Note-->
         <scene sceneID="HUN-Gc-7aW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7V-26-KJR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7V-26-KJR" customClass="Notes_NavigationController" customModule="AwesomeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="New Note" image="pencil" catalog="system" selectedImage="pencil" id="TTu-hm-xo0">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
