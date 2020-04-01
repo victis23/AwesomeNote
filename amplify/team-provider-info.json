@@ -1,0 +1,15 @@
+{
+    "anoteenv": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awesomenote-anoteenv-142903-authRole",
+            "UnauthRoleArn": "arn:aws:iam::445192754881:role/amplify-awesomenote-anoteenv-142903-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::445192754881:role/amplify-awesomenote-anoteenv-142903-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-awesomenote-anoteenv-142903-deployment",
+            "UnauthRoleName": "amplify-awesomenote-anoteenv-142903-unauthRole",
+            "StackName": "amplify-awesomenote-anoteenv-142903",
+            "StackId": "arn:aws:cloudformation:us-east-1:445192754881:stack/amplify-awesomenote-anoteenv-142903/ab7d9bd0-7446-11ea-a2c4-12bdd946785e",
+            "AmplifyAppId": "dg4bb3d98n0hz"
+        }
+    }
+}
