@@ -26,6 +26,10 @@
 		7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */; };
 		7D75F40B2434BCCF00841DB6 /* Notes+NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F40A2434BCCF00841DB6 /* Notes+NavigationController.swift */; };
 		7D75F40E2434BFBC00841DB6 /* Notes+TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */; };
+		7D75F4112434D0B700841DB6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4102434D0B700841DB6 /* Login.swift */; };
+		7D75F4142434D0E800841DB6 /* LoginHosting+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4132434D0E800841DB6 /* LoginHosting+ViewController.swift */; };
+		7D75F4162434D2E400841DB6 /* UIKitWrapperToMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4152434D2E400841DB6 /* UIKitWrapperToMain.swift */; };
+		7D75F4182434D4E900841DB6 /* Slides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D75F4172434D4E900841DB6 /* Slides.storyboard */; };
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
@@ -75,6 +79,10 @@
 		7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+ViewController.swift"; sourceTree = "<group>"; };
 		7D75F40A2434BCCF00841DB6 /* Notes+NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+NavigationController.swift"; sourceTree = "<group>"; };
 		7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+TabBarController.swift"; sourceTree = "<group>"; };
+		7D75F4102434D0B700841DB6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		7D75F4132434D0E800841DB6 /* LoginHosting+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginHosting+ViewController.swift"; sourceTree = "<group>"; };
+		7D75F4152434D2E400841DB6 /* UIKitWrapperToMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitWrapperToMain.swift; sourceTree = "<group>"; };
+		7D75F4172434D4E900841DB6 /* Slides.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Slides.storyboard; sourceTree = "<group>"; };
 		7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Child_Main.swift"; sourceTree = "<group>"; };
 		7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildViewCell+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		7D9BF8402433FF4700813563 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		7D27FDEB24326A3C0060DC29 /* AwesomeNote */ = {
 			isa = PBXGroup;
 			children = (
+				7D75F40F2434CFE800841DB6 /* ViewModels */,
 				7D27FE3024326D710060DC29 /* ArtElements */,
 				7D27FE2F24326D420060DC29 /* ApplicationState */,
 				7D27FE2724326B650060DC29 /* Models */,
@@ -161,6 +170,7 @@
 		7D27FE2324326B080060DC29 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D75F4122434D0D200841DB6 /* SwiftUIHosting */,
 				7D75F40C2434BF7200841DB6 /* SubClasses */,
 				7D27FE3124327A6E0060DC29 /* Helpers */,
 				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
@@ -216,6 +226,7 @@
 				7D27FDF224326A3C0060DC29 /* Main.storyboard */,
 				7D27FE7824335F6B0060DC29 /* Notes.storyboard */,
 				7D27FDFA24326A3C0060DC29 /* LaunchScreen.storyboard */,
+				7D75F4172434D4E900841DB6 /* Slides.storyboard */,
 			);
 			path = ArtElements;
 			sourceTree = "<group>";
@@ -235,6 +246,23 @@
 				7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */,
 			);
 			path = SubClasses;
+			sourceTree = "<group>";
+		};
+		7D75F40F2434CFE800841DB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7D75F4102434D0B700841DB6 /* Login.swift */,
+				7D75F4152434D2E400841DB6 /* UIKitWrapperToMain.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7D75F4122434D0D200841DB6 /* SwiftUIHosting */ = {
+			isa = PBXGroup;
+			children = (
+				7D75F4132434D0E800841DB6 /* LoginHosting+ViewController.swift */,
+			);
+			path = SwiftUIHosting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +372,7 @@
 				7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */,
 				7D27FDFC24326A3C0060DC29 /* LaunchScreen.storyboard in Resources */,
 				7D27FDF924326A3C0060DC29 /* Assets.xcassets in Resources */,
+				7D75F4182434D4E900841DB6 /* Slides.storyboard in Resources */,
 				7D27FDF424326A3C0060DC29 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,8 +404,10 @@
 				7D9BF8412433FF4700813563 /* Notes.swift in Sources */,
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
 				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
+				7D75F4162434D2E400841DB6 /* UIKitWrapperToMain.swift in Sources */,
 				7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */,
 				7D75F40B2434BCCF00841DB6 /* Notes+NavigationController.swift in Sources */,
+				7D75F4142434D0E800841DB6 /* LoginHosting+ViewController.swift in Sources */,
 				7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */,
 				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
 				7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */,
@@ -384,6 +415,7 @@
 				7D27FE2224326AE80060DC29 /* AddNote+ViewController.swift in Sources */,
 				7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */,
 				7D27FE2B24326C460060DC29 /* Keys.swift in Sources */,
+				7D75F4112434D0B700841DB6 /* Login.swift in Sources */,
 				7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */,
 				7D27FE2024326AA90060DC29 /* ViewController+.swift in Sources */,
 			);
