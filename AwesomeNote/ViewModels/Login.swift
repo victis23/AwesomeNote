@@ -135,3 +135,72 @@ struct ApplicationTitleHeader: View {
 		}
 	}
 }
+
+struct QuestionTableView: View {
+	
+	@Binding private var username : String
+	@Binding private var email : String
+	@Binding private var password : String
+	@Binding private var passwordConfirmation : String
+	
+	@Binding private var isCreatingAccount: Bool
+	
+	init(username:Binding<String>, email: Binding<String>, password: Binding<String>, passwordConfirmation: Binding<String>, isCreatingAccount :Binding<Bool>){
+		
+		self._username = username
+		self._email = email
+		self._password = password
+		self._passwordConfirmation = passwordConfirmation
+		self._isCreatingAccount = isCreatingAccount
+	}
+	
+	var body: some View {
+		Form {
+			TextField("UserName", text: $username, onCommit: {})
+				.padding()
+			TextField("Email", text: $email, onEditingChanged: {_ in}, onCommit: {})
+				.padding()
+			TextField("Password", text: $password, onCommit: {})
+				.padding()
+			
+			//								if isCreatingAccount {
+			TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in}, onCommit: {})
+				.padding()
+				.opacity(isCreatingAccount ? 1 : 0)
+				.animation(Animation.easeIn(duration: 1))
+			//								}
+			
+		}
+		.font(Font.largeTitle)
+		.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
+		.introspectTableView(customize: { item in
+			item.backgroundColor = .white
+		})
+			.frame(height: 375, alignment: .center)
+	}
+}
+
+struct CreateAccountButton: View {
+	
+	@Binding private var isCreatingAccount :Bool
+	
+	init(iscreatingAccount:Binding<Bool>){
+		self._isCreatingAccount = iscreatingAccount
+	}
+	
+	var body: some View {
+		Button(action: {
+			self.isCreatingAccount.toggle()
+		}, label: {
+			HStack{
+				Spacer()
+				Text("Create Account")
+					.bold()
+				Image(systemName:"person.crop.circle.fill.badge.plus")
+			}
+			.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 1)))
+			.font(Font.system(.title))
+			.padding()
+		})
+	}
+}
