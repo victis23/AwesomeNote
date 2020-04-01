@@ -56,7 +56,6 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="qkQ-Xg-eI4" id="ULd-1F-evZ"/>
                                             <outlet property="titleLabel" destination="lyc-yj-Pfj" id="HXk-Ls-m6N"/>
-                                            <segue destination="sea-AS-7PS" kind="show" identifier="edit" id="AeO-hn-6Wj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -89,6 +88,7 @@
                         <outlet property="homeButton" destination="Q5h-8o-lSV" id="Pb8-tF-rQq"/>
                         <outlet property="tableView" destination="YcW-bZ-RgC" id="k8G-j6-ngb"/>
                         <segue destination="sea-AS-7PS" kind="show" identifier="resume" id="0IR-sD-8j5"/>
+                        <segue destination="sea-AS-7PS" kind="show" identifier="edit" id="JRX-5z-lZf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9js-Dc-x1g" sceneMemberID="firstResponder"/>
@@ -212,7 +212,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AeO-hn-6Wj"/>
+        <segue reference="JRX-5z-lZf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>

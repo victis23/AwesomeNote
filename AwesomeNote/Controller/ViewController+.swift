@@ -74,7 +74,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 		
 		//Used to determine if row is being edited.
 		isEditingRowForIndexPath = (true,indexPath)
-		
+		performSegue(withIdentifier: "edit", sender: self)
 		tableView.deselectRow(at: indexPath, animated: true)
 	}
 	

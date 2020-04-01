@@ -53,6 +53,16 @@ class ViewController: UIViewController {
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		//Value must be reset or cancelled edits on existing notes will effect new notes.
+		self.isEditingRowForIndexPath = (false,nil)
+		
+		self.title = "Notes"
+		navigationController?.navigationBar.prefersLargeTitles = true
+	}
+	
 	override var preferredStatusBarStyle: UIStatusBarStyle{
 		super.preferredStatusBarStyle
 	}
@@ -190,6 +200,8 @@ class ViewController: UIViewController {
 		
 		if segue.identifier == SegueKeys.self.edit.rawValue {
 			
+			self.title = ""
+			
 			let destination = segue.destination as! AddNote_ViewController
 			
 			guard let indexPath = tableView.indexPathForSelectedRow else {return}
@@ -217,14 +229,6 @@ class ViewController: UIViewController {
 		let setEditMode = tableView.isEditing
 		tableView.setEditing(!setEditMode, animated: true)
 		
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		//Value must be reset or cancelled edits on existing notes will effect new notes.
-		self.isEditingRowForIndexPath = (false,nil)
-		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 	
 	///Returns user to Notes slides.

@@ -12,8 +12,15 @@ class Notes_TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		setNeedsStatusBarAppearanceUpdate()
 
-        // Do any additional setup after loading the view.
+		if let vcList = viewControllers{
+			vcList.forEach { vc in
+				vc.modalPresentationCapturesStatusBarAppearance = true
+				vc.setNeedsStatusBarAppearanceUpdate()
+			}
+		}
     }
     
 	override var preferredStatusBarStyle: UIStatusBarStyle {

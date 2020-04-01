@@ -13,6 +13,11 @@ class Notes_NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setNeedsStatusBarAppearanceUpdate()
+		
+		viewControllers.forEach { vc in
+			vc.modalPresentationCapturesStatusBarAppearance = true
+			vc.setNeedsStatusBarAppearanceUpdate()
+		}
     }
     
 	override var preferredStatusBarStyle: UIStatusBarStyle {
