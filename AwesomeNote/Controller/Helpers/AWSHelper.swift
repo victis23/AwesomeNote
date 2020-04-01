@@ -16,6 +16,8 @@ class AWSHelper : ObservableObject {
 	@Published var email: String?
 	@Published var isSignedIn: Bool = false
 	
+	private var signUpResult : (SignUpResult?,SignInResult?)
+	
 	private var aws = AWSMobileClient.default()
 	
 	init(username:String?,password:String?){
@@ -61,8 +63,11 @@ class AWSHelper : ObservableObject {
 			}
 			
 			guard let result = result else {return}
-			self?.isSignedIn = true
-			print("User account created with : \(result)")
+			DispatchQueue.main.async {
+				self?.isSignedIn = true
+				self?.signUpResult = (result,nil)
+			}
+			print("User account created successfully!")
 		}
 		
 	}
@@ -72,7 +77,7 @@ class AWSHelper : ObservableObject {
 		
 		guard let username = username, let password = password else {return}
 		
-		aws.signIn(username: username, password: password) { (result, error) in
+		aws.signIn(username: username, password: password) { [weak self](result, error) in
 			
 			if let error = error {
 				print(error.localizedDescription)
@@ -80,8 +85,11 @@ class AWSHelper : ObservableObject {
 			}
 			
 			guard let result = result else {return}
-			self.isSignedIn = true
-			print("User signed in successfully with \(result)")
+			DispatchQueue.main.async {
+				self?.isSignedIn = true
+				self?.signUpResult = (nil,result)
+			}
+			print("User signed in successfully!")
 		}
 	}
 }
