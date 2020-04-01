@@ -111,3 +111,19 @@ struct SubmitButton: View {
 		}
 	}
 }
+
+struct ApplicationTitleHeader: View {
+	var body: some View {
+		HStack{
+			Group{
+				Image(systemName: "rectangle.and.paperclip")
+					.font(Font.system(size: 50))
+				Text("Awesome Note")
+					.font(Font.system(size: 40))
+					.fontWeight(.thin)
+			}
+			.padding(.top, 100)
+			.foregroundColor(.black)
+		}
+	}
+}
