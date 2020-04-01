@@ -24,6 +24,8 @@
 		7D27FE3324327A910060DC29 /* Retriever+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */; };
 		7D27FE7924335F6B0060DC29 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D27FE7824335F6B0060DC29 /* Notes.storyboard */; };
 		7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */; };
+		7D75F40B2434BCCF00841DB6 /* Notes+NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F40A2434BCCF00841DB6 /* Notes+NavigationController.swift */; };
+		7D75F40E2434BFBC00841DB6 /* Notes+TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */; };
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
@@ -71,6 +73,8 @@
 		7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Retriever+CoreData.swift"; sourceTree = "<group>"; };
 		7D27FE7824335F6B0060DC29 /* Notes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		7D27FE7C2433660A0060DC29 /* Main+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+ViewController.swift"; sourceTree = "<group>"; };
+		7D75F40A2434BCCF00841DB6 /* Notes+NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+NavigationController.swift"; sourceTree = "<group>"; };
+		7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes+TabBarController.swift"; sourceTree = "<group>"; };
 		7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Child_Main.swift"; sourceTree = "<group>"; };
 		7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildViewCell+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		7D9BF8402433FF4700813563 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		7D27FE2324326B080060DC29 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D75F40C2434BF7200841DB6 /* SubClasses */,
 				7D27FE3124327A6E0060DC29 /* Helpers */,
 				7D27FE2124326AE80060DC29 /* AddNote+ViewController.swift */,
 				7D27FDF024326A3C0060DC29 /* ViewController.swift */,
@@ -221,6 +226,15 @@
 				7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7D75F40C2434BF7200841DB6 /* SubClasses */ = {
+			isa = PBXGroup;
+			children = (
+				7D75F40A2434BCCF00841DB6 /* Notes+NavigationController.swift */,
+				7D75F40D2434BFBC00841DB6 /* Notes+TabBarController.swift */,
+			);
+			path = SubClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,11 +370,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D9BF8432433FFD800813563 /* Section.swift in Sources */,
+				7D75F40E2434BFBC00841DB6 /* Notes+TabBarController.swift in Sources */,
 				7D27FE7D2433660A0060DC29 /* Main+ViewController.swift in Sources */,
 				7D9BF8412433FF4700813563 /* Notes.swift in Sources */,
 				7D27FDF124326A3C0060DC29 /* ViewController.swift in Sources */,
 				7D27FDED24326A3C0060DC29 /* AppDelegate.swift in Sources */,
 				7D27FE2624326B3A0060DC29 /* Cell+ViewController.swift in Sources */,
+				7D75F40B2434BCCF00841DB6 /* Notes+NavigationController.swift in Sources */,
 				7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */,
 				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
 				7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */,

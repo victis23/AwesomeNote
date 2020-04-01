@@ -49,9 +49,12 @@ class ViewController: UIViewController {
 		checkForInterruption()
 		setBackgroundColor()
 		
-		//Set color of title.
-//		self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+		setNeedsStatusBarAppearanceUpdate()
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+	}
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle{
+		.darkContent
 	}
 	
 	///Sets background color on entire view.
