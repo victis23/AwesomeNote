@@ -22,6 +22,11 @@ class Main_ViewController: UIViewController {
 		childView.layer.cornerRadius = 10
 	}
 	
+	//Set status bar to white.
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		.lightContent
+	}
+	
 	///Sets background on childview to gradient.
 	func setBackground(){
 		
