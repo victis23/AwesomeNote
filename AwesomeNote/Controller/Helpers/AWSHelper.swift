@@ -53,7 +53,7 @@ class AWSHelper : ObservableObject {
 		
 		guard let username = username, let password = password, let email = email else {return}
 		
-		aws.signUp(username: username, password: password, userAttributes: ["email":email]) { (result, error) in
+		aws.signUp(username: username, password: password, userAttributes: ["email":email]) { [weak self](result, error) in
 		
 			if let error = error {
 				print(error.localizedDescription)
@@ -61,7 +61,7 @@ class AWSHelper : ObservableObject {
 			}
 			
 			guard let result = result else {return}
-			
+			self?.isSignedIn = true
 			print("User is signed in with : \(result)")
 		}
 		
