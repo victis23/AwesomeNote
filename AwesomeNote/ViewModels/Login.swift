@@ -12,7 +12,10 @@ import Introspect
 /// Handles user authentication.
 struct Login: View {
 	
-	@State var isPresenting : Bool = false
+	@ObservedObject private var awsHelper : AWSHelper = AWSHelper(username: nil, password: nil)
+	
+	@State private var isPresenting : Bool = false
+	@State private var isCreatingAccount :Bool = false
 	
 	var body: some View {
 		
