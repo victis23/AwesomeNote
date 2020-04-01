@@ -9,6 +9,7 @@
 
 import UIKit
 
+///Handles the organization of the tableview where user's can access and edit their notes.
 class ViewController: UIViewController {
 	
 	@IBOutlet weak var homeButton: UIBarButtonItem!
