@@ -48,6 +48,14 @@ struct Login: View {
 		}
 		.statusBar(hidden: true)
 		.edgesIgnoringSafeArea(.all)
+		.onAppear(perform: {
+			
+			//Checks to see if user is already signed into AWS. If this is true application proceeds to content.
+			self.awsHelper.initializeAWS()
+			if self.awsHelper.isSignedIn {
+				self.isPresenting = self.awsHelper.isSignedIn
+			}
+		})
 	}
 }
 
