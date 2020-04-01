@@ -17,6 +17,53 @@ struct Login: View {
 	var body: some View {
 		
 		NavigationView {
+			VStack{
+				ZStack{
+					Color.white
+					VStack{
+						VStack{
+							HStack{
+								Group{
+									Image(systemName: "rectangle.and.paperclip")
+										.font(Font.system(size: 50))
+									Text("Awesome Note")
+										.font(Font.system(size: 40))
+										.fontWeight(.thin)
+								}
+								.padding(.top, 100)
+								.foregroundColor(.black)
+							}
+							Spacer()
+							SubmitButton(isPresenting: $isPresenting)
+								.padding(.bottom, 100)
+						}
+					}
+				}
+				.edgesIgnoringSafeArea(.all)
+			}
+		}
+		.statusBar(hidden: true)
+		.edgesIgnoringSafeArea(.all)
+	}
+}
+
+struct Login_Previews: PreviewProvider {
+	static var previews: some View {
+		Login()
+	}
+}
+
+/// Controls user authorization.
+struct SubmitButton: View {
+	
+	@Binding private var isPresenting : Bool
+	
+	init(isPresenting: Binding<Bool>){
+		self._isPresenting = isPresenting
+	}
+	
+	var body: some View {
+		Group {
 			NavigationLink(destination: MainView()
 				
 				//SwiftUI shifts the view's position when we remove the navigation controller from the view.
@@ -25,28 +72,21 @@ struct Login: View {
 				.edgesIgnoringSafeArea(.all)
 				.introspectViewController(customize: {_ in})
 				
-						   ,isActive: $isPresenting) {
+			,isActive: $isPresenting) {
 				Button(action: {
 					self.isPresenting.toggle()
 				}) {
-					Text("Access List")
+					HStack{
+						Group{
+							Text("Login")
+								.fontWeight(.bold)
+							Image(systemName: "lock.icloud.fill")
+						}
+						.font(.system(size: 40))
+					}
+					
 				}
 			}
-		}.statusBar(hidden: true)
-			.edgesIgnoringSafeArea(.all)
-	}
-}
-	
-	struct Login_Previews: PreviewProvider {
-		static var previews: some View {
-			Login()
 		}
-}
-
-extension UIScreen {
-	
-	static let screenWidth = UIScreen.main.bounds.size.width
-	static let screenHeight = UIScreen.main.bounds.size.height
-	static let screenSize = UIScreen.main.bounds.size
-	static let location = UIScreen.main.bounds
+	}
 }
