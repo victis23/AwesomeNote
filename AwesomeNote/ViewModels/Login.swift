@@ -31,16 +31,17 @@ struct Login: View {
 					Color.white
 					VStack{
 						VStack{
-							HStack{
-								Group{
-									Image(systemName: "rectangle.and.paperclip")
-										.font(Font.system(size: 50))
-									Text("Awesome Note")
-										.font(Font.system(size: 40))
-										.fontWeight(.thin)
-								}
-								.padding(.top, 100)
-								.foregroundColor(.black)
+							ApplicationTitleHeader()
+							
+							Form {
+								TextField("UserName", text: $username, onCommit: {})
+									.padding()
+								TextField("Email", text: $email, onEditingChanged: {_ in}, onCommit: {})
+									.padding()
+								TextField("Password", text: $password, onCommit: {})
+									.padding()
+								TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in}, onCommit: {})
+									.padding()
 							}
 							.font(Font.largeTitle)
 							.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
