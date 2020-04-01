@@ -54,7 +54,7 @@ class ViewController: UIViewController {
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle{
-		.darkContent
+		super.preferredStatusBarStyle
 	}
 	
 	///Sets background color on entire view.
@@ -155,7 +155,6 @@ class ViewController: UIViewController {
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
 			}
 		}else if fromSegue.identifier == SegueKeys.self.cancel.rawValue{
-			//Called in order to AddNote+ViewController
 			NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.cancel), object: nil)
 			print("Note was cancelled...")
 		}
@@ -222,6 +221,9 @@ class ViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
+		
+		//Value must be reset or cancelled edits on existing notes will effect new notes.
+		self.isEditingRowForIndexPath = (false,nil)
 		navigationController?.navigationBar.prefersLargeTitles = true
 	}
 	
