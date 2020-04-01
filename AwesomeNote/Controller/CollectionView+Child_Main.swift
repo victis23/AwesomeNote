@@ -40,6 +40,7 @@ class CollectionView_Child_Main: UIViewController {
 		setSnapShot()
 	}
 	
+	//FIXME: Coredata returns an empty object when user cancels a note before saving. Fix in post.
 	/// Transforms coredata objects into `Notes` and appends each to `notes` array.
 	func retrieveNotes(){
 		
@@ -48,7 +49,13 @@ class CollectionView_Child_Main: UIViewController {
 			
 			cdNotes.forEach {
 				let note = Notes(note: $0)
-				notes.append(note)
+				
+				//Sometimes coredata returns an empty object. This will need to be fixed if app is to move into production. For now this is the temporary work around.
+				if $0.index == 0 {
+					retriever?.remove(object: $0)
+				}else{
+					notes.append(note)
+				}
 			}
 		}
 	}
