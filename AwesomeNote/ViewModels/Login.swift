@@ -83,13 +83,15 @@ struct Login_Previews: PreviewProvider {
 struct SubmitButton: View {
 	
 	@Binding private var isPresenting : Bool
+	@ObservedObject private var awsHelper : AWSHelper
 	private var function : String
 	private var imageName : String
 	
-	init(isPresenting: Binding<Bool>, imageName:String, function:String){
+	init(isPresenting: Binding<Bool>, imageName:String, function:String, helper:ObservedObject<AWSHelper>){
 		self._isPresenting = isPresenting
 		self.function = function
 		self.imageName = imageName
+		self._awsHelper = helper
 	}
 	
 	var body: some View {
