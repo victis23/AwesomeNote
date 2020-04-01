@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		7D75F4142434D0E800841DB6 /* LoginHosting+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4132434D0E800841DB6 /* LoginHosting+ViewController.swift */; };
 		7D75F4162434D2E400841DB6 /* UIKitWrapperToMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4152434D2E400841DB6 /* UIKitWrapperToMain.swift */; };
 		7D75F4182434D4E900841DB6 /* Slides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D75F4172434D4E900841DB6 /* Slides.storyboard */; };
+		7D75F41B2434D86C00841DB6 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 7D75F41A2434D86C00841DB6 /* Introspect */; };
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
@@ -94,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D75F41B2434D86C00841DB6 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +283,9 @@
 			dependencies = (
 			);
 			name = AwesomeNote;
+			packageProductDependencies = (
+				7D75F41A2434D86C00841DB6 /* Introspect */,
+			);
 			productName = AwesomeNote;
 			productReference = 7D27FDE924326A3C0060DC29 /* AwesomeNote.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +358,9 @@
 				Base,
 			);
 			mainGroup = 7D27FDE024326A3C0060DC29;
+			packageReferences = (
+				7D75F4192434D86C00841DB6 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 7D27FDEA24326A3C0060DC29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -746,6 +754,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D75F4192434D86C00841DB6 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D75F41A2434D86C00841DB6 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D75F4192434D86C00841DB6 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7D27FDF524326A3C0060DC29 /* AwesomeNote.xcdatamodeld */ = {

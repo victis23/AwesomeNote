@@ -32,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fGS-Cu-zRI">
-                                        <rect key="frame" x="0.0" y="177" width="414" height="689"/>
+                                        <rect key="frame" x="0.0" y="177" width="414" height="719"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <segue destination="dQ3-UH-b4K" kind="embed" id="7oz-M4-PLp"/>
@@ -44,7 +44,7 @@
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="centerX" secondItem="gzE-LF-Tju" secondAttribute="centerX" id="28F-Mk-TE2"/>
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="leading" secondItem="gzE-LF-Tju" secondAttribute="leading" id="7aq-Qw-fpb"/>
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="top" secondItem="EUx-oW-PrG" secondAttribute="bottom" constant="82" id="Zzz-X9-wdn"/>
-                                    <constraint firstAttribute="bottom" secondItem="fGS-Cu-zRI" secondAttribute="bottom" constant="30" id="zbZ-0a-I7Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="fGS-Cu-zRI" secondAttribute="bottom" id="zbZ-0a-I7Y"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -87,28 +87,28 @@
             <objects>
                 <viewController id="dQ3-UH-b4K" customClass="CollectionView_Child_Main" customModule="AwesomeNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HV7-HS-d2S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="689"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UU8-jF-LZF">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="569"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="431"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nqZ-P2-fY3">
-                                    <size key="itemSize" width="414" height="493"/>
+                                    <size key="itemSize" width="414" height="355"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="note" id="aaY-wf-gU9" customClass="ChildViewCell_CollectionViewCell" customModule="AwesomeNote" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="493"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="z1L-Ty-Cch" customClass="ChildViewCell_CollectionViewCell" customModule="AwesomeNote" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="493"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dmE-cN-IxP">
-                                                    <rect key="frame" x="8" y="8" width="398" height="477"/>
+                                                    <rect key="frame" x="8" y="8" width="398" height="339"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,7 +125,7 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="414" height="493"/>
+                                        <size key="customSize" width="414" height="355"/>
                                         <connections>
                                             <outlet property="content" destination="dmE-cN-IxP" id="TNf-rn-DNO"/>
                                         </connections>
@@ -133,7 +133,7 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-hl-ul3">
-                                <rect key="frame" x="128" y="589" width="266" height="57"/>
+                                <rect key="frame" x="128" y="439" width="266" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWE-Jt-XIG">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="57"/>
@@ -178,11 +178,12 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4DR-VQ-lWy" firstAttribute="trailing" secondItem="VL4-hl-ul3" secondAttribute="trailing" constant="20" id="4Do-PW-uln"/>
-                            <constraint firstItem="VL4-hl-ul3" firstAttribute="top" secondItem="UU8-jF-LZF" secondAttribute="bottom" constant="20" id="FK3-IE-GKu"/>
+                            <constraint firstItem="4DR-VQ-lWy" firstAttribute="bottom" secondItem="VL4-hl-ul3" secondAttribute="bottom" constant="223" id="Fik-bW-IYR"/>
                             <constraint firstItem="UU8-jF-LZF" firstAttribute="trailing" secondItem="4DR-VQ-lWy" secondAttribute="trailing" id="O7W-4r-1Kz"/>
                             <constraint firstItem="UU8-jF-LZF" firstAttribute="top" secondItem="HV7-HS-d2S" secondAttribute="top" id="UbH-4b-Wzp"/>
+                            <constraint firstItem="UU8-jF-LZF" firstAttribute="top" secondItem="HV7-HS-d2S" secondAttribute="top" id="X0l-Yl-3Kg"/>
+                            <constraint firstItem="VL4-hl-ul3" firstAttribute="top" secondItem="UU8-jF-LZF" secondAttribute="bottom" constant="8" id="kcc-8A-AGX"/>
                             <constraint firstItem="UU8-jF-LZF" firstAttribute="leading" secondItem="4DR-VQ-lWy" secondAttribute="leading" id="qfj-O7-Fjp"/>
-                            <constraint firstItem="4DR-VQ-lWy" firstAttribute="bottom" secondItem="UU8-jF-LZF" secondAttribute="bottom" constant="120" id="sAA-w2-pML"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4DR-VQ-lWy"/>
                     </view>
