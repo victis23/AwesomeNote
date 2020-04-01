@@ -42,6 +42,12 @@ struct Login: View {
 								.padding(.top, 100)
 								.foregroundColor(.black)
 							}
+							.font(Font.largeTitle)
+							.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
+							.introspectTableView(customize: { item in
+								item.backgroundColor = .white
+							})
+							
 							Spacer()
 							SubmitButton(isPresenting: $isCreatingAccount, imageName: "person.crop.circle.fill.badge.plus", function: "Create Account")
 							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login")
