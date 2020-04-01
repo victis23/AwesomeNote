@@ -36,7 +36,7 @@ struct Login: View {
 						VStack{
 							ApplicationTitleHeader()
 							
-							QuestionTableView(username: $username, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, isCreatingAccount: $isCreatingAccount)
+							QuestionTableView(username: $username, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, isValidAccount: $isValidAccount, isCreatingAccount: $isCreatingAccount, helper: _awsHelper)
 							
 							CreateAccountButton(iscreatingAccount: $isCreatingAccount)
 							
@@ -156,7 +156,7 @@ struct QuestionTableView: View {
 	@Binding private var isValidAccount: Bool
 	@Binding private var isCreatingAccount: Bool
 	
-	init(username:Binding<String>, email: Binding<String>, password: Binding<String>, passwordConfirmation: Binding<String>, isCreatingAccount :Binding<Bool>){
+	init(username:Binding<String>, email: Binding<String>, password: Binding<String>, passwordConfirmation: Binding<String>, isValidAccount :Binding<Bool>,isCreatingAccount: Binding<Bool>, helper : ObservedObject<AWSHelper>){
 		
 		self._username = username
 		self._email = email
