@@ -17,6 +17,12 @@ struct Login: View {
 	@State private var isPresenting : Bool = false
 	@State private var isCreatingAccount :Bool = false
 	
+	@State private var username: String = ""
+	@State private var email : String = ""
+	@State private var password: String = ""
+	@State private var passwordConfirmation: String = ""
+	
+	
 	var body: some View {
 		
 		NavigationView {
