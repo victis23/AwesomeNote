@@ -122,7 +122,7 @@ class ViewController: UIViewController {
 				isEditingRowForIndexPath.0 = false
 				tableView.reloadData()
 				
-				//
+				//Called in order to AddNote+ViewController
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
 				
 			} else {
@@ -148,9 +148,11 @@ class ViewController: UIViewController {
 				notes.append(note)
 				coreDataHelper?.saveInCoreData()
 				tableView.reloadData()
+				//Called in order to AddNote+ViewController
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)
 			}
 		}else if fromSegue.identifier == SegueKeys.self.cancel.rawValue{
+			//Called in order to AddNote+ViewController
 			NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.cancel), object: nil)
 			print("Note was cancelled...")
 		}
