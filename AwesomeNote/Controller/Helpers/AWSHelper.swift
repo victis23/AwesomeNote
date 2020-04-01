@@ -20,9 +20,9 @@ class AWSHelper : ObservableObject {
 		self.password = password
 	}
 	
+	
+	///Initialized AWSMobile Singleton and verifies what the user's login state is.
 	func initializeAWS() {
-		
-		
 		AWSMobileClient.default().initialize { [weak self](signInStatus, error) in
 			
 			if let error = error {
@@ -44,7 +44,7 @@ class AWSHelper : ObservableObject {
 		}
 	}
 	
-	
+	/// Is called if user is not signed in or if tokens have expired.
 	func performSignIn(){
 		print("Signed Out | Attempting sign-in!")
 	}
