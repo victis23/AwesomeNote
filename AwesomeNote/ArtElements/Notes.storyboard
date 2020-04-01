@@ -153,7 +153,8 @@
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="cdN-C1-QXo">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="4pb-Pz-vyT" kind="relationship" relationship="viewControllers" id="WmX-FD-RTa"/>
@@ -168,7 +169,9 @@
         <scene sceneID="b0w-Kb-eIj">
             <objects>
                 <navigationController title="List" automaticallyAdjustsScrollViewInsets="NO" id="4pb-Pz-vyT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" selectedImage="list.bullet" id="HLo-lV-ds0"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" selectedImage="list.bullet" id="HLo-lV-ds0">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ujL-O3-ccm">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -187,7 +190,9 @@
         <scene sceneID="HUN-Gc-7aW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j7V-26-KJR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Note" image="pencil" catalog="system" selectedImage="pencil" id="TTu-hm-xo0"/>
+                    <tabBarItem key="tabBarItem" title="New Note" image="pencil" catalog="system" selectedImage="pencil" id="TTu-hm-xo0">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ohb-Nj-U5J">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
