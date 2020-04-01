@@ -105,6 +105,7 @@ struct SubmitButton: View {
 							Image(systemName: imageName)
 						}
 						.font(.system(size: 40))
+						.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 1)))
 					}
 				}
 			}
