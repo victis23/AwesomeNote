@@ -18,10 +18,4 @@ class Notes_NavigationController: UINavigationController {
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		.darkContent
 	}
-	
-	override var childForStatusBarStyle: UIViewController? {
-		let vc = self.viewControllers[0]
-		print(self.viewControllers)
-		return vc
-	}
 }

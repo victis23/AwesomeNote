@@ -19,14 +19,4 @@ class Notes_TabBarController: UITabBarController {
 	override var preferredStatusBarStyle: UIStatusBarStyle {
 		.darkContent
 	}
-	
-	override var childForStatusBarStyle: UIViewController? {
-		
-		guard let vcList = viewControllers else {fatalError()}
-		
-		let vc = vcList[0]
-		print("TabView \(vcList)")
-		return vc
-	}
-
 }
