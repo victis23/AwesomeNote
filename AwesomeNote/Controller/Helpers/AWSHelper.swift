@@ -36,7 +36,7 @@ class AWSHelper : ObservableObject {
 			
 			switch status {
 			case .signedOut:
-				self?.performSignIn()
+				self?.performSignUp()
 			case .signedIn:
 				self?.isSignedIn = true
 				print("Signed In")
