@@ -49,7 +49,7 @@ class AWSHelper : ObservableObject {
 	
 	/// Is called if user is not signed in or if tokens have expired.
 	func performSignUp(){
-		print("Signed Out | Attempting sign-in!")
+		print("Signed Out | Attempting account creation!")
 		
 		guard let username = username, let password = password, let email = email else {return}
 		
@@ -62,8 +62,26 @@ class AWSHelper : ObservableObject {
 			
 			guard let result = result else {return}
 			self?.isSignedIn = true
-			print("User is signed in with : \(result)")
+			print("User account created with : \(result)")
 		}
 		
+	}
+	
+	func performLogin(){
+		print("Signed Out | Attempting sign-in!")
+		
+		guard let username = username, let password = password else {return}
+		
+		aws.signIn(username: username, password: password) { (result, error) in
+			
+			if let error = error {
+				print(error.localizedDescription)
+				return
+			}
+			
+			guard let result = result else {return}
+			self.isSignedIn = true
+			print("User signed in successfully with \(result)")
+		}
 	}
 }
