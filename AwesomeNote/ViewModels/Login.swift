@@ -60,7 +60,7 @@ struct Login: View {
 			
 			//Checks to see if user is already signed into AWS. If this is true application proceeds to content.
 			self.awsHelper.initializeAWS()
-//			self.awsHelper.logOut()
+			//			self.awsHelper.logOut()
 			if self.awsHelper.isSignedIn {
 				self.isPresenting = self.awsHelper.isSignedIn
 			}
@@ -178,16 +178,14 @@ struct QuestionTableView: View {
 			})
 				.padding()
 			
-			TextField("Email", text: $email, onEditingChanged: {_ in
-				self.validateAccountCreds()
-			}, onCommit: {
-				self.validateAccountCreds()
-			})
-				.padding()
-				.frame(height: isCreatingAccount ? 70 : 0)
-				.opacity(isCreatingAccount ? 1 : 0)
-				.animation(Animation.easeIn(duration: 1))
-				
+			if isCreatingAccount {
+				TextField("Email", text: $email, onEditingChanged: {_ in
+					self.validateAccountCreds()
+				}, onCommit: {
+					self.validateAccountCreds()
+				})
+					.padding()
+			}
 			
 			TextField("Password", text: $password,onEditingChanged: { _ in
 				self.validateAccountCreds()
@@ -196,17 +194,14 @@ struct QuestionTableView: View {
 			})
 				.padding()
 			
-			//								if isCreatingAccount {
-			TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in
-				self.validateAccountCreds()
-			}, onCommit: {
-				self.validateAccountCreds()
-			})
-				.padding()
-				.frame(height: isCreatingAccount ? 70 : 0)
-				.opacity(isCreatingAccount ? 1 : 0)
-				.animation(Animation.easeIn(duration: 1))
-			//								}
+			if isCreatingAccount {
+				TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in
+					self.validateAccountCreds()
+				}, onCommit: {
+					self.validateAccountCreds()
+				})
+					.padding()
+			}
 			
 		}
 		.font(Font.largeTitle)
@@ -251,7 +246,9 @@ struct CreateAccountButton: View {
 	
 	var body: some View {
 		Button(action: {
-			self.isCreatingAccount.toggle()
+			withAnimation(Animation.easeIn(duration: 5), {
+				self.isCreatingAccount.toggle()
+			})
 		}, label: {
 			HStack{
 				Spacer()
