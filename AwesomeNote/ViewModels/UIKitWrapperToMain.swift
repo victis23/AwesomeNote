@@ -11,18 +11,17 @@ import SwiftUI
 /// Wraps UIKIT instance in a representable that swiftUI can present.
 struct MainView: UIViewControllerRepresentable {
 	
+	@Environment(\.presentationMode) var mode
+	
+	//Find user defined storyboard in bundle using name.
+	var viewController = UIStoryboard(name: "Slides", bundle: .main).instantiateInitialViewController() as? Main_ViewController
+	
 	//Specify what type of controller is being wrapped in an associated type.
 	typealias UIViewControllerType = UIViewController
 
-	//Determines which viewcontroller will be presented to user. This string corresponds to the name of the storyboard file in the main bundle.
-	private var storyboardPointer : String = "Slides"
-	
 	func makeUIViewController(context: Context) -> UIViewControllerType {
-		
-		//Find user defined storyboard in bundle using name.
-		let storyboard = UIStoryboard(name: storyboardPointer, bundle: .main)
-
-		guard let viewController = storyboard.instantiateInitialViewController() as? Main_ViewController else { fatalError() }
+		guard let viewController = viewController else {fatalError()}
+		viewController.presenting = mode
 		return viewController
 	}
 	
