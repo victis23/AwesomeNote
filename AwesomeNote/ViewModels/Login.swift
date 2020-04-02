@@ -218,6 +218,7 @@ struct QuestionTableView: View {
 		.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
 		.introspectTableView(customize: { item in
 			item.backgroundColor = .white
+			item.visibleCells.forEach { cell in cell.backgroundColor = .white}
 		})
 			.frame(height: 375, alignment: .center)
 	}
