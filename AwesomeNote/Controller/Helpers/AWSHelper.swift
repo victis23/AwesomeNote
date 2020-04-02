@@ -92,4 +92,14 @@ class AWSHelper : ObservableObject {
 			print("User signed in successfully!")
 		}
 	}
+	
+	func logOut() {
+		
+		aws.signOut(completionHandler: { error in
+			if let error = error {
+				print(error.localizedDescription)
+			}
+		})
+		
+	}
 }
