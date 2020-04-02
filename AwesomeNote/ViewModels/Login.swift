@@ -64,6 +64,16 @@ struct Login: View {
 			if self.awsHelper.isSignedIn {
 				self.isPresenting = self.awsHelper.isSignedIn
 			}
+			
+			/// Add listener for changes in login status.
+			self.awsHelper.aws.addUserStateListener(self as AnyObject) { (state, dictionary) in
+				if state == .signedIn {
+					self.isPresenting = true
+				}
+				if state == .signedOut {
+					
+				}
+			}
 		})
 	}
 }
