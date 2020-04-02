@@ -38,17 +38,18 @@
                                             <segue destination="dQ3-UH-b4K" kind="embed" id="7oz-M4-PLp"/>
                                         </connections>
                                     </containerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sj1-nQ-d04">
-                                        <rect key="frame" x="340" y="65" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sj1-nQ-d04">
+                                        <rect key="frame" x="338" y="53" width="46" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="sj1-nQ-d04" secondAttribute="height" multiplier="23:15" constant="-18.400000000000006" id="fF4-ub-5AO"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="logoutButton:" destination="2lB-54-7y9" eventType="touchUpInside" id="uwR-Kn-HOS"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp4-PE-u69">
-                                        <rect key="frame" x="341" y="105" width="43" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp4-PE-u69">
+                                        <rect key="frame" x="338" y="98" width="46" height="23"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -57,7 +58,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="centerX" secondItem="gzE-LF-Tju" secondAttribute="centerX" id="28F-Mk-TE2"/>
+                                    <constraint firstAttribute="trailing" secondItem="sj1-nQ-d04" secondAttribute="trailing" constant="30" id="6qU-zn-fib"/>
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="leading" secondItem="gzE-LF-Tju" secondAttribute="leading" id="7aq-Qw-fpb"/>
+                                    <constraint firstItem="Gp4-PE-u69" firstAttribute="centerX" secondItem="sj1-nQ-d04" secondAttribute="centerX" id="7yZ-Lv-JIh"/>
+                                    <constraint firstItem="sj1-nQ-d04" firstAttribute="trailing" secondItem="Gp4-PE-u69" secondAttribute="trailing" id="COj-Wj-Lg0"/>
+                                    <constraint firstItem="sj1-nQ-d04" firstAttribute="centerY" secondItem="EUx-oW-PrG" secondAttribute="centerY" constant="-6" id="Ci3-1G-W59"/>
+                                    <constraint firstItem="fGS-Cu-zRI" firstAttribute="top" secondItem="Gp4-PE-u69" secondAttribute="bottom" constant="56" id="RQ2-Gs-gi8"/>
+                                    <constraint firstItem="Gp4-PE-u69" firstAttribute="top" secondItem="sj1-nQ-d04" secondAttribute="bottom" constant="3" id="WqB-1J-8mu"/>
                                     <constraint firstItem="fGS-Cu-zRI" firstAttribute="top" secondItem="EUx-oW-PrG" secondAttribute="bottom" constant="82" id="Zzz-X9-wdn"/>
                                     <constraint firstAttribute="bottom" secondItem="fGS-Cu-zRI" secondAttribute="bottom" id="zbZ-0a-I7Y"/>
                                 </constraints>
