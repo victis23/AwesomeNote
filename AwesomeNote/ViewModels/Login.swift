@@ -38,7 +38,7 @@ struct Login: View {
 							
 							QuestionTableView(username: $username, email: $email, password: $password, passwordConfirmation: $passwordConfirmation, isValidAccount: $isValidAccount, isCreatingAccount: $isCreatingAccount, helper: _awsHelper)
 							
-							CreateAccountButton(iscreatingAccount: $isCreatingAccount)
+							CreateAccountButton(iscreatingAccount: $isCreatingAccount, isValidCredResetter: $isValidAccount)
 							
 							Spacer()
 							
@@ -221,16 +221,20 @@ struct QuestionTableView: View {
 				self.awsHelper.email = self.email
 				self.awsHelper.password = self.password
 				self.isValidAccount = true
+			}else{
+				self.isValidAccount = false
 			}
 		}
 		
 		if !self.isCreatingAccount {
-			if self.email.isValidEmail && self.username != "" && self.password != "" {
+			if self.username != "" && self.password != "" {
 				
 				self.awsHelper.username = self.username
 				self.awsHelper.email = self.email
 				self.awsHelper.password = self.password
 				self.isValidAccount = true
+			}else{
+				self.isValidAccount = false
 			}
 		}
 	}
@@ -239,15 +243,18 @@ struct QuestionTableView: View {
 struct CreateAccountButton: View {
 	
 	@Binding private var isCreatingAccount :Bool
+	@Binding private var isValidCredResetter : Bool
 	
-	init(iscreatingAccount:Binding<Bool>){
+	init(iscreatingAccount:Binding<Bool>, isValidCredResetter : Binding<Bool>){
 		self._isCreatingAccount = iscreatingAccount
+		self._isValidCredResetter = isValidCredResetter
 	}
 	
 	var body: some View {
 		Button(action: {
 			withAnimation(Animation.easeIn(duration: 5), {
 				self.isCreatingAccount.toggle()
+				self.isValidCredResetter.toggle()
 			})
 		}, label: {
 			HStack{
