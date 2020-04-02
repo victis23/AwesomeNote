@@ -38,6 +38,21 @@
                                             <segue destination="dQ3-UH-b4K" kind="embed" id="7oz-M4-PLp"/>
                                         </connections>
                                     </containerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sj1-nQ-d04">
+                                        <rect key="frame" x="340" y="65" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="logoutButton:" destination="2lB-54-7y9" eventType="touchUpInside" id="uwR-Kn-HOS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp4-PE-u69">
+                                        <rect key="frame" x="341" y="105" width="43" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -66,6 +81,7 @@
                         <outlet property="background" destination="joo-Kv-EjS" id="SpM-P2-LAb"/>
                         <outlet property="childView" destination="gzE-LF-Tju" id="o41-De-Dhj"/>
                         <outlet property="editButton" destination="EUx-oW-PrG" id="Aje-bg-hBf"/>
+                        <outlet property="logoutButton" destination="sj1-nQ-d04" id="TEG-Nw-jeY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzG-qF-lPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
