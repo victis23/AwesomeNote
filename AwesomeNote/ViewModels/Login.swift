@@ -217,8 +217,8 @@ struct QuestionTableView: View {
 		if self.isCreatingAccount {
 			if self.password == self.passwordConfirmation && self.email.isValidEmail && self.username != "" && self.password != "" {
 				
-				self.awsHelper.username = self.username
-				self.awsHelper.email = self.email
+				self.awsHelper.username = self.username.lowercased()
+				self.awsHelper.email = self.email.lowercased()
 				self.awsHelper.password = self.password
 				self.isValidAccount = true
 			}else{
@@ -229,8 +229,7 @@ struct QuestionTableView: View {
 		if !self.isCreatingAccount {
 			if self.username != "" && self.password != "" {
 				
-				self.awsHelper.username = self.username
-				self.awsHelper.email = self.email
+				self.awsHelper.username = self.username.lowercased()
 				self.awsHelper.password = self.password
 				self.isValidAccount = true
 			}else{
