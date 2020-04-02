@@ -18,7 +18,7 @@ class AWSHelper : ObservableObject {
 	
 	private var signUpResult : (SignUpResult?,SignInResult?)
 	
-	private var aws = AWSMobileClient.default()
+	public var aws = AWSMobileClient.default()
 	
 	init(username:String?,password:String?){
 		self.username = username
