@@ -237,7 +237,8 @@ struct QuestionTableView: View {
 			item.backgroundColor = .white
 			item.visibleCells.forEach { cell in cell.backgroundColor = .white}
 		})
-			.frame(height: 375, alignment: .center)
+			.frame(height: isCreatingAccount ? 375 : 225, alignment: .center)
+			.animation(Animation.easeIn(duration: 1))
 	}
 	
 	func validateAccountCreds(){
@@ -279,7 +280,7 @@ struct CreateAccountButton: View {
 	
 	var body: some View {
 		Button(action: {
-			withAnimation(Animation.easeIn(duration: 5), {
+			withAnimation(Animation.easeIn(duration: 0.5), {
 			
 				//If the user actually needs to create an account after they tried using a signin. Validation needs to be reset.
 				if !self.isCreatingAccount {
@@ -297,7 +298,7 @@ struct CreateAccountButton: View {
 			}
 			.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 1)))
 			.font(Font.system(.title))
-			.padding()
+			.padding(.trailing)
 		})
 	}
 }
