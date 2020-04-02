@@ -57,7 +57,8 @@ class AWSHelper : ObservableObject {
 		
 		aws.signUp(username: username, password: password, userAttributes: ["email":email]) { [weak self](result, error) in
 		
-			if let error = error {
+			if let error = error as? AWSMobileClientError {
+				
 				print(error.localizedDescription)
 				return
 			}
@@ -79,7 +80,7 @@ class AWSHelper : ObservableObject {
 		
 		aws.signIn(username: username, password: password) { [weak self](result, error) in
 			
-			if let error = error {
+			if let error = error as? AWSMobileClientError {
 				print(error.localizedDescription)
 				return
 			}
