@@ -262,8 +262,13 @@ struct CreateAccountButton: View {
 	var body: some View {
 		Button(action: {
 			withAnimation(Animation.easeIn(duration: 5), {
+			
+				//If the user actually needs to create an account after they tried using a signin. Validation needs to be reset.
+				if !self.isCreatingAccount {
+					self.isValidCredResetter = false
+				}
+				
 				self.isCreatingAccount.toggle()
-				self.isValidCredResetter.toggle()
 			})
 		}, label: {
 			HStack{
