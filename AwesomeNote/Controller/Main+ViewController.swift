@@ -15,6 +15,8 @@ class Main_ViewController: UIViewController {
 	@IBOutlet weak var logoutButton: UIButton!
 	@IBOutlet weak var childView: UIView!
 	
+	let awsHelper = AWSHelper(username: nil, password: nil)
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setBackground()
