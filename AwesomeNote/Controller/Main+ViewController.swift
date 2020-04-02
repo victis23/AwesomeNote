@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class Main_ViewController: UIViewController {
 	
@@ -16,6 +17,8 @@ class Main_ViewController: UIViewController {
 	@IBOutlet weak var childView: UIView!
 	
 	let awsHelper = AWSHelper(username: nil, password: nil)
+
+	var presenting : Binding<PresentationMode>?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,7 +26,10 @@ class Main_ViewController: UIViewController {
 		setEditButtonColor()
 		childView.backgroundColor = .clear
 		childView.layer.cornerRadius = 10
-//		self.navigationController?.navigationBar.isHidden = true
+	}
+	
+	deinit {
+		print("View controller is dismissed.")
 	}
 	
 	//Set status bar to white.
@@ -70,7 +76,7 @@ class Main_ViewController: UIViewController {
 	
 	@IBAction func logoutButton(_ sender: UIButton) {
 		awsHelper.logOut()
-		self.dismiss(animated: true, completion: {})
+		presenting?.wrappedValue.dismiss()
 	}
 	
 	
