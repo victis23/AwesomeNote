@@ -60,6 +60,7 @@ struct Login: View {
 			
 			//Checks to see if user is already signed into AWS. If this is true application proceeds to content.
 			self.awsHelper.initializeAWS()
+//			self.awsHelper.logOut()
 			if self.awsHelper.isSignedIn {
 				self.isPresenting = self.awsHelper.isSignedIn
 			}
@@ -169,18 +170,25 @@ struct QuestionTableView: View {
 	
 	var body: some View {
 		Form {
+			
 			TextField("UserName", text: $username, onEditingChanged: {_ in
 				self.validateAccountCreds()
 			}, onCommit: {
 				self.validateAccountCreds()
 			})
 				.padding()
+			
 			TextField("Email", text: $email, onEditingChanged: {_ in
 				self.validateAccountCreds()
 			}, onCommit: {
 				self.validateAccountCreds()
 			})
 				.padding()
+				.frame(height: isCreatingAccount ? 70 : 0)
+				.opacity(isCreatingAccount ? 1 : 0)
+				.animation(Animation.easeIn(duration: 1))
+				
+			
 			TextField("Password", text: $password,onEditingChanged: { _ in
 				self.validateAccountCreds()
 			}, onCommit: {
@@ -195,6 +203,7 @@ struct QuestionTableView: View {
 				self.validateAccountCreds()
 			})
 				.padding()
+				.frame(height: isCreatingAccount ? 70 : 0)
 				.opacity(isCreatingAccount ? 1 : 0)
 				.animation(Animation.easeIn(duration: 1))
 			//								}
