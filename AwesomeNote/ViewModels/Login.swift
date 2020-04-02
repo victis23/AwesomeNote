@@ -42,7 +42,8 @@ struct Login: View {
 							
 							Spacer()
 							
-							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login", helper: _awsHelper, isNewAccount: $isCreatingAccount)
+							
+							SubmitButton(isPresenting: $isPresenting, imageName: "lock.icloud.fill", function: "Login", helper: _awsHelper, isNewAccount: $isCreatingAccount, username: $username, email: $email, password: $password, passwordConfirmation: $passwordConfirmation)
 								.padding(.bottom, 100)
 								.disabled(isValidAccount ? false : true)
 								.opacity(isValidAccount ? 1 : 0.2)
@@ -87,18 +88,30 @@ struct Login_Previews: PreviewProvider {
 /// Controls user authorization.
 struct SubmitButton: View {
 	
+	@Binding private var username: String
+	@Binding private var email : String
+	@Binding private var password: String
+	@Binding private var passwordConfirmation: String
+	
 	@Binding private var isPresenting : Bool
 	@Binding private var isNewAccount : Bool
 	@ObservedObject private var awsHelper : AWSHelper
 	private var function : String
 	private var imageName : String
 	
-	init(isPresenting: Binding<Bool>, imageName:String, function:String, helper:ObservedObject<AWSHelper>, isNewAccount: Binding<Bool>){
+	init(isPresenting: Binding<Bool>, imageName:String, function:String, helper:ObservedObject<AWSHelper>, isNewAccount: Binding<Bool>, username : Binding<String>, email: Binding<String>, password : Binding<String>, passwordConfirmation: Binding<String>){
 		self._isPresenting = isPresenting
 		self.function = function
 		self.imageName = imageName
 		self._awsHelper = helper
 		self._isNewAccount = isNewAccount
+		
+		
+		//Properties used to clear fields
+		self._username = username
+		self._email = email
+		self._password = password
+		self._passwordConfirmation = passwordConfirmation
 	}
 	
 	var body: some View {
@@ -123,6 +136,10 @@ struct SubmitButton: View {
 					
 					//If login is successful value is updated to true and user is given access to data.
 					self.isPresenting = self.awsHelper.isSignedIn
+					self.username = ""
+					self.email = ""
+					self.password = ""
+					self.passwordConfirmation = ""
 				}) {
 					HStack{
 						Group{
