@@ -16,12 +16,10 @@ class DynamoDBHelper : Retriever {
 	//AppSync Client used to perform CRUD.
 	var appSyncClient = (UIApplication.shared.delegate as! AppDelegate).appSyncClientBridge
 	
-	var title : String
-	var content : String
+	var note : CDNote
 	
-	init?(title:String, content:String){
-		self.title = title
-		self.content = content
+	init?(note:CDNote){
+		self.note = note
 		super.init(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
 	}
 	
@@ -31,19 +29,21 @@ class DynamoDBHelper : Retriever {
 	
 	override func saveInDB() {
 		
-		let write = CreateNotesInput(title: title, content: content)
-		
-		appSyncClient?.perform(mutation: CreateNotesMutation(input: write), resultHandler: { (result, error) in
+		if let title = note.title, let content = note.content {
+			let write = CreateNotesInput(title: title, content: content)
 			
-			if let error = error {
-				print(error.localizedDescription)
-				return
-			}
-			
-			if let _ = result {
-				print("DataBase written successfully.")
-			}
-		})
+			appSyncClient?.perform(mutation: CreateNotesMutation(input: write), resultHandler: { (result, error) in
+				
+				if let error = error {
+					print(error.localizedDescription)
+					return
+				}
+				
+				if let _ = result {
+					print("DataBase written successfully.")
+				}
+			})
+		}
 	}
 	
 	override func retrieveFromDB(query: NSPredicate? = nil) -> [CDNote]? {
