@@ -50,7 +50,19 @@ class DynamoDBHelper : Retriever {
 		
 		let PLACEHOLDER : [CDNote]? = nil
 		
-		appSyncClient?.fetch(query: ListNotessQuery())
+		
+		appSyncClient?.fetch(query: ListNotessQuery(), cachePolicy: .returnCacheDataAndFetch, queue: .global(qos: .background), resultHandler: { (result, error) in
+			
+			if let error = error as? AWSAppSyncClientError {
+				print("Query Failed with error: \(error)")
+			}
+			
+			guard let result = result, let returnValue = result.data?.listNotess?.items else {return}
+			
+			returnValue.forEach { note in
+				print(note?.content ?? "Note was empty!")
+			}
+		})
 		
 		return PLACEHOLDER
 	}
