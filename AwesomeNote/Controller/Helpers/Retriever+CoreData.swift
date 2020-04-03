@@ -19,7 +19,7 @@ class Retriever {
 	}
 	
 	///Returns array of CDNote Objects from Persistent Container.
-	public func retrieveFromCoreData(query : NSPredicate? = nil) -> [CDNote]?{
+	public func retrieveFromDB(query : NSPredicate? = nil) -> [CDNote]?{
 		
 		let _fetchRequest = NSFetchRequest<CDNote>(entityName: "CDNote")
 		

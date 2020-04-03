@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		notes = coreDataHelper?.retrieveFromCoreData() ?? []
+		notes = coreDataHelper?.retrieveFromDB() ?? []
 		checkForInterruption()
 		setBackgroundColor()
 		
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
 				let query = NSPredicate(format: "index = %@", NSNumber(value: indexPath.row + 1))
 				
 				guard let content = saveNoteController.userNoteTextView.text, content != "",content != " ",
-					let object = coreDataHelper?.retrieveFromCoreData(query: query) else {return}
+					let object = coreDataHelper?.retrieveFromDB(query: query) else {return}
 				
 				//Deletes objects with matching index from coredata.
 				//Remember this is a required step or we will have duplicates.
