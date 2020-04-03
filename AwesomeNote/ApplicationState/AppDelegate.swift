@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import AWSAppSync
+import AWSMobileClient
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let serviceConfig = try AWSAppSyncServiceConfig()
 		
 		let appSyncConfiguration = try AWSAppSyncClientConfiguration(appSyncServiceConfig: serviceConfig,
-																	 cacheConfiguration: cache)
+														userPoolsAuthProvider: CognitoPoolProvider(),
+														cacheConfiguration: cache)
+		
 		
 		return appSyncConfiguration
 	}
@@ -103,3 +106,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+///Class provides CognitoUserPoolAuthCreds
+class CognitoPoolProvider : AWSCognitoUserPoolsAuthProvider {
+	
+	func getLatestAuthToken() -> String {
+		let provider = AWSMobileClient.default().getCredentialsProvider()
+		let tokenContainer = provider.identityProvider.token()
+		guard let tokenNSString = tokenContainer.result else {fatalError()}
+		let token = String(tokenNSString)
+		return token
+	}
+}
