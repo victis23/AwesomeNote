@@ -214,17 +214,14 @@ struct QuestionTableView: View {
 					.padding()
 			}
 			
-			TextField("Password", text: $password,onEditingChanged: { _ in
-				self.validateAccountCreds()
-			}, onCommit: {
+			SecureField("Password", text: $password, onCommit: {
 				self.validateAccountCreds()
 			})
 				.padding()
 			
 			if isCreatingAccount {
-				TextField("Password Confirmation", text: $passwordConfirmation, onEditingChanged: {_ in
-					self.validateAccountCreds()
-				}, onCommit: {
+				
+				SecureField("Password Confirmation", text: $passwordConfirmation, onCommit: {
 					self.validateAccountCreds()
 				})
 					.padding()
@@ -283,7 +280,7 @@ struct CreateAccountButton: View {
 	var body: some View {
 		Button(action: {
 			withAnimation(Animation.easeIn(duration: 0.5), {
-			
+				
 				//If the user actually needs to create an account after they tried using a signin. Validation needs to be reset.
 				if !self.isCreatingAccount {
 					self.isValidCredResetter = false
