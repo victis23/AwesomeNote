@@ -1,1 +1,27 @@
-{}
+{
+	"auth": {
+		"awesomenotefaa8e4a4": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	},
+	"api": {
+		"awesomenote": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authawesomenotefaa8e4a4"
+						}
+					}
+				}
+			}
+		}
+	}
+}

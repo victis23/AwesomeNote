@@ -45,7 +45,7 @@ class CollectionView_Child_Main: UIViewController {
 	func retrieveNotes(){
 		
 		notes = []
-		if let cdNotes = retriever?.retrieveFromCoreData() {
+		if let cdNotes = retriever?.retrieveFromDB() {
 			
 			cdNotes.forEach {
 				let note = Notes(note: $0)

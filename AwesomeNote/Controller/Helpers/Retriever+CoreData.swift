@@ -19,7 +19,7 @@ class Retriever {
 	}
 	
 	///Returns array of CDNote Objects from Persistent Container.
-	public func retrieveFromCoreData(query : NSPredicate? = nil) -> [CDNote]?{
+	public func retrieveFromDB(query : NSPredicate? = nil) -> [CDNote]?{
 		
 		let _fetchRequest = NSFetchRequest<CDNote>(entityName: "CDNote")
 		
@@ -34,7 +34,7 @@ class Retriever {
 	}
 	
 	/// Updates Persistent Container.
-	public func saveInCoreData(){
+	public func saveInDB(){
 		do {
 			try context.save()
 		}
@@ -49,7 +49,7 @@ class Retriever {
 		guard let _coredataObject = object as? NSManagedObject else {return}
 		
 		context.delete(_coredataObject)
-		self.saveInCoreData()
+		self.saveInDB()
 		
 	}
 	
@@ -63,6 +63,6 @@ class Retriever {
 		let tempIndex = note1.index
 		note1.index = note2.index
 		note2.index = tempIndex
-		self.saveInCoreData()
+		self.saveInDB()
 	}
 }

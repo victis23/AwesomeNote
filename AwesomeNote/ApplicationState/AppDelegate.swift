@@ -8,14 +8,36 @@
 
 import UIKit
 import CoreData
+import AWSAppSync
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+	var appSyncClientBridge : AWSAppSyncClient?
+	
+	/// Sets the configuration settings for application's AWSAppSync Client.
+	func appSyncSetup()throws -> AWSAppSyncClientConfiguration{
+		
+		let cache = try AWSAppSyncCacheConfiguration()
+		let serviceConfig = try AWSAppSyncServiceConfig()
+		
+		let appSyncConfiguration = try AWSAppSyncClientConfiguration(appSyncServiceConfig: serviceConfig,
+																	 cacheConfiguration: cache)
+		
+		return appSyncConfiguration
+	}
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		do {
+			let configFile = try appSyncSetup()
+			appSyncClientBridge = try AWSAppSyncClient(appSyncConfig: configFile)
+		}
+		catch(let error){
+			print(error.localizedDescription)
+		}
+		
 		UITextView.appearance().backgroundColor = .white
 		return true
 	}

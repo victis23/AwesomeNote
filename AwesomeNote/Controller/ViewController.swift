@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		notes = coreDataHelper?.retrieveFromCoreData() ?? []
+		notes = coreDataHelper?.retrieveFromDB() ?? []
 		checkForInterruption()
 		setBackgroundColor()
 		
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
 				let query = NSPredicate(format: "index = %@", NSNumber(value: indexPath.row + 1))
 				
 				guard let content = saveNoteController.userNoteTextView.text, content != "",content != " ",
-					let object = coreDataHelper?.retrieveFromCoreData(query: query) else {return}
+					let object = coreDataHelper?.retrieveFromDB(query: query) else {return}
 				
 				//Deletes objects with matching index from coredata.
 				//Remember this is a required step or we will have duplicates.
@@ -125,7 +125,7 @@ class ViewController: UIViewController {
 				note.content = content
 				note.index = Int16(indexPath.row + 1)
 				
-				coreDataHelper?.saveInCoreData()
+				coreDataHelper?.saveInDB()
 				
 				//Removes old version of note from Notes Array.
 				notes.remove(at: indexPath.row)
@@ -159,7 +159,7 @@ class ViewController: UIViewController {
 				
 				
 				notes.append(note)
-				coreDataHelper?.saveInCoreData()
+				coreDataHelper?.saveInDB()
 				tableView.reloadData()
 				//Called in order to AddNote+ViewController
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)

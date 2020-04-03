@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import SwiftUI
 
 class Main_ViewController: UIViewController {
 	
 	@IBOutlet weak var background : UIView!
 	@IBOutlet weak var editButton : UIButton!
+	@IBOutlet weak var logoutButton: UIButton!
 	@IBOutlet weak var childView: UIView!
+	
+	let awsHelper = AWSHelper(username: nil, password: nil)
+
+	var presenting : Binding<PresentationMode>?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,7 +26,10 @@ class Main_ViewController: UIViewController {
 		setEditButtonColor()
 		childView.backgroundColor = .clear
 		childView.layer.cornerRadius = 10
-//		self.navigationController?.navigationBar.isHidden = true
+	}
+	
+	deinit {
+		print("View controller is dismissed.")
 	}
 	
 	//Set status bar to white.
@@ -45,14 +54,30 @@ class Main_ViewController: UIViewController {
 	///Sets SF Pro Symbol to label of button.
 	func setEditButtonColor(){
 		
-		let image = UIImage(systemName: "slider.horizontal.3")
-		editButton.setTitle("", for: .normal)
-		editButton.tintColor = .white
-		editButton.setImage(image, for: .normal)
-		editButton.contentVerticalAlignment = .fill
-		editButton.contentHorizontalAlignment = .fill
-		editButton.bounds = CGRect(origin: view.center, size: CGSize(width: 70, height: 50))
+		let sliderButton = UIImage(systemName: "slider.horizontal.3")
+		let exitButton = UIImage(systemName: "clear.fill")
 		
+		let buttons = [editButton,logoutButton]
+		
+		buttons.forEach { bttn in
+			guard let bttn = bttn else {return}
+			bttn.setTitle("", for: .normal)
+			bttn.tintColor = .white
+			bttn.contentVerticalAlignment = .fill
+			bttn.contentHorizontalAlignment = .fill
+		}
+		
+		editButton.bounds = CGRect(origin: view.center, size: CGSize(width: 70, height: 50))
+		logoutButton.bounds = CGRect(origin: view.center, size: CGSize(width: 60, height: 50))
+		
+		editButton.setImage(sliderButton, for: .normal)
+		logoutButton.setImage(exitButton, for: .normal)
 	}
+	
+	@IBAction func logoutButton(_ sender: UIButton) {
+		awsHelper.logOut()
+		presenting?.wrappedValue.dismiss()
+	}
+	
 	
 }
