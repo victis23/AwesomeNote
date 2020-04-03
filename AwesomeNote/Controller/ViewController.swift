@@ -63,6 +63,10 @@ class ViewController: UIViewController {
 		
 		self.title = "Notes"
 		navigationController?.navigationBar.prefersLargeTitles = true
+		
+		/* Testing */
+		print(dyamoDBHelper?.retrieveFromDB() ?? [])
+		/*End Testing*/
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle{
@@ -162,10 +166,6 @@ class ViewController: UIViewController {
 				
 				dyamoDBHelper = DynamoDBHelper(note: note)
 				dyamoDBHelper?.saveInDB()
-				
-				/* Testing */
-				print(dyamoDBHelper?.retrieveFromDB() ?? [])
-				/*End Testing*/
 				
 				notes.append(note)
 				coreDataHelper?.saveInDB()
