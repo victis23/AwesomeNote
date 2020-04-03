@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var appSyncClientBridge : AWSAppSyncClient?
 	
+	/// Sets the configuration settings for application's AWSAppSync Client.
 	func appSyncSetup()throws -> AWSAppSyncClientConfiguration{
 		
 		let cache = try AWSAppSyncCacheConfiguration()
