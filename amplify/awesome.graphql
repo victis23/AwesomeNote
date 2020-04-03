@@ -1,5 +1,3 @@
-
-
 # type User @model @auth(rules: [{ allow: owner, ownerField: "id", operations: [create, update, delete]}])
 # {
 #   id: ID!
@@ -32,34 +30,20 @@
 #   updatedAt: String
 # }
 
-type User @model @auth(rules: [{
-allow: owner,
-  ownerField: "id",
-  operations: [
-    create,
-    update,
-    delete
-  ]}])
-  {
-    id: ID!
-    username: String!
-    notes : [Notes] @connection(name: "UserNotes", keyField: "userId")
-  }
+type User @model @auth(rules: [{ allow: owner, ownerField: "id", operations: [create, update, delete] }]) {
+	id: ID!
+	username: String!
+	notes: [Notes] @connection(name: "UserNotes", keyField: "userId")
+}
 
-  type Notes @model @auth(rules: [{
-allow: owner,
-  ownerField: "id",
-  operations: [
-    create,
-    update,
-    delete
-  ]}])
-  @key(name: "byIndex", fields: ["index"], queryField: "getNoteByIndex")
-  {
-    title : String!
-    content : String!
-    id: ID!
-    index : Int
-    userId : ID
-    user : User! @connection(name: "UserNotes", keyField: "userId")
-  }
+type Notes
+	@model
+	@auth(rules: [{ allow: owner, ownerField: "id", operations: [create, update, delete] }])
+	@key(name: "byIndex", fields: ["index"], queryField: "getNoteByIndex") {
+	title: String!
+	content: String!
+	id: ID!
+	index: Int
+	userId: ID
+	user: User! @connection(name: "UserNotes", keyField: "userId")
+}
