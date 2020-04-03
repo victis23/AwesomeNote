@@ -1,0 +1,97 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser($id: String!) {
+  onCreateUser(id: $id) {
+    id
+    username
+    notes {
+      items {
+        title
+        content
+        id
+        index
+        userId
+      }
+      nextToken
+    }
+  }
+}
+subscription OnUpdateUser($id: String!) {
+  onUpdateUser(id: $id) {
+    id
+    username
+    notes {
+      items {
+        title
+        content
+        id
+        index
+        userId
+      }
+      nextToken
+    }
+  }
+}
+subscription OnDeleteUser($id: String!) {
+  onDeleteUser(id: $id) {
+    id
+    username
+    notes {
+      items {
+        title
+        content
+        id
+        index
+        userId
+      }
+      nextToken
+    }
+  }
+}
+subscription OnCreateNotes($id: String!) {
+  onCreateNotes(id: $id) {
+    title
+    content
+    id
+    index
+    userId
+    user {
+      id
+      username
+      notes {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnUpdateNotes($id: String!) {
+  onUpdateNotes(id: $id) {
+    title
+    content
+    id
+    index
+    userId
+    user {
+      id
+      username
+      notes {
+        nextToken
+      }
+    }
+  }
+}
+subscription OnDeleteNotes($id: String!) {
+  onDeleteNotes(id: $id) {
+    title
+    content
+    id
+    index
+    userId
+    user {
+      id
+      username
+      notes {
+        nextToken
+      }
+    }
+  }
+}
