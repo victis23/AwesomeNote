@@ -65,7 +65,10 @@ class ViewController: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		
 		/* Testing */
-		print(dyamoDBHelper?.retrieveFromDB() ?? [])
+		dyamoDBHelper?.retrieveFromDB(completion: {notes in
+			print(notes)
+			print("Firing")
+		})
 		/*End Testing*/
 	}
 	
