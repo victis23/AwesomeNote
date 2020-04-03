@@ -23,6 +23,8 @@ class ViewController: UIViewController {
 		Retriever(context: context)
 	}
 	
+	var dyamoDBHelper : DynamoDBHelper?
+	
 	// Instance of Core Data Note Object.
 	weak private var note : CDNote? {
 		let note = CDNote(context: context)
@@ -143,6 +145,7 @@ class ViewController: UIViewController {
 				// Executes on first save.
 				
 				guard let content = saveNoteController.userNoteTextView.text, content != "", content != " " else {return}
+				
 				let displayTitle = content.split(separator: " ")
 				var setTitle : String = ""
 				
@@ -157,6 +160,12 @@ class ViewController: UIViewController {
 					note.index = Int16(notes.count + 1)
 				}
 				
+				dyamoDBHelper = DynamoDBHelper(note: note)
+				dyamoDBHelper?.saveInDB()
+				
+				/* Testing */
+				print(dyamoDBHelper?.retrieveFromDB() ?? [])
+				/*End Testing*/
 				
 				notes.append(note)
 				coreDataHelper?.saveInDB()
