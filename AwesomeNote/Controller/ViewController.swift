@@ -54,9 +54,9 @@ class ViewController: UIViewController {
 		setNeedsStatusBarAppearanceUpdate()
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 		
-		DispatchQueue.main.async { [weak self] in
+		DispatchQueue.main.async { 
 			/* Testing */
-			self?.dyamoDBHelper?.retrieveFromDB(completion: {notes in
+			self.dyamoDBHelper?.retrieveFromDB(completion: {notes in
 				print(notes)
 				print("Firing")
 			})

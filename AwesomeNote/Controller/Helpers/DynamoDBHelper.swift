@@ -46,10 +46,13 @@ class DynamoDBHelper : Retriever {
 		}
 	}
 	
+	//FIXME: Not retrieving properly from database
+	
+	///Retrieves notes from DynamoDB 
 	func retrieveFromDB(query: NSPredicate? = nil, completion: @escaping (([String]) -> Void)){
 		
 		
-		appSyncClient?.fetch(query: ListNotessQuery(), cachePolicy: .returnCacheDataAndFetch, queue: .global(qos: .background), resultHandler: { (result, error) in
+		appSyncClient?.fetch(query: ListNotessQuery(), cachePolicy: .fetchIgnoringCacheData, queue: .global(qos: .background), resultHandler: { (result, error) in
 			
 			if let error = error as? AWSAppSyncClientError {
 				print("Query Failed with error: \(error)")
