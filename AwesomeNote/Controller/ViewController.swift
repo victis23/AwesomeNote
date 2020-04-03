@@ -125,7 +125,7 @@ class ViewController: UIViewController {
 				note.content = content
 				note.index = Int16(indexPath.row + 1)
 				
-				coreDataHelper?.saveInCoreData()
+				coreDataHelper?.saveInDB()
 				
 				//Removes old version of note from Notes Array.
 				notes.remove(at: indexPath.row)
@@ -159,7 +159,7 @@ class ViewController: UIViewController {
 				
 				
 				notes.append(note)
-				coreDataHelper?.saveInCoreData()
+				coreDataHelper?.saveInDB()
 				tableView.reloadData()
 				//Called in order to AddNote+ViewController
 				NotificationCenter.default.post(name: NSNotification.Name(ReuseIdentifier.save), object: nil)

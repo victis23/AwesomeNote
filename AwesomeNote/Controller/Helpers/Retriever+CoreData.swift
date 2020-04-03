@@ -34,7 +34,7 @@ class Retriever {
 	}
 	
 	/// Updates Persistent Container.
-	public func saveInCoreData(){
+	public func saveInDB(){
 		do {
 			try context.save()
 		}
@@ -49,7 +49,7 @@ class Retriever {
 		guard let _coredataObject = object as? NSManagedObject else {return}
 		
 		context.delete(_coredataObject)
-		self.saveInCoreData()
+		self.saveInDB()
 		
 	}
 	
@@ -63,6 +63,6 @@ class Retriever {
 		let tempIndex = note1.index
 		note1.index = note2.index
 		note2.index = tempIndex
-		self.saveInCoreData()
+		self.saveInDB()
 	}
 }

@@ -66,7 +66,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource {
 		notes.insert(movedValue, at: destinationIndexPath.row)
 		
 		coreDataHelper?.swap(movedValue, with: notes[destinationIndexPath.row])
-		coreDataHelper?.saveInCoreData()
+		coreDataHelper?.saveInDB()
 		
 	}
 
