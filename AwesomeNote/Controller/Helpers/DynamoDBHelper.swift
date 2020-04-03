@@ -50,6 +50,8 @@ class DynamoDBHelper : Retriever {
 		
 		let PLACEHOLDER : [CDNote]? = nil
 		
+		appSyncClient?.fetch(query: ListNotessQuery())
+		
 		return PLACEHOLDER
 	}
 }
