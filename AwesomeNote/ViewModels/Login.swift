@@ -198,11 +198,14 @@ struct QuestionTableView: View {
 	var body: some View {
 		Form {
 			
-			TextField("UserName", text: $username, onEditingChanged: {_ in
+			TextField("Username", text: $username, onEditingChanged: {_ in
 				self.validateAccountCreds()
 			}, onCommit: {
 				self.validateAccountCreds()
 			})
+				.introspectTextField(customize: {field in
+					self.setFieldAesthetics(with: field, label: "Username")
+				})
 				.padding()
 			
 			if isCreatingAccount {
@@ -211,12 +214,18 @@ struct QuestionTableView: View {
 				}, onCommit: {
 					self.validateAccountCreds()
 				})
+					.introspectTextField(customize: {field in
+						self.setFieldAesthetics(with: field, label: "Email")
+					})
 					.padding()
 			}
 			
 			SecureField("Password", text: $password, onCommit: {
 				self.validateAccountCreds()
 			})
+				.introspectTextField(customize: {field in
+					self.setFieldAesthetics(with: field, label: "Password")
+				})
 				.padding()
 			
 			if isCreatingAccount {
@@ -224,6 +233,11 @@ struct QuestionTableView: View {
 				SecureField("Password Confirmation", text: $passwordConfirmation, onCommit: {
 					self.validateAccountCreds()
 				})
+					//Does the same thing as cell.backgroundColor below except that it can apply the change to cells as the appear.
+					.listRowBackground(Color.white)
+					.introspectTextField(customize: {field in
+						self.setFieldAesthetics(with: field, label: "Password Confirmation")
+					})
 					.padding()
 			}
 			
@@ -238,6 +252,18 @@ struct QuestionTableView: View {
 			.frame(height: isCreatingAccount ? 400 : 225, alignment: .center)
 			.animation(Animation.easeIn(duration: 1))
 			.textFieldStyle(RoundedBorderTextFieldStyle())
+	}
+	
+	///SwiftUI has limited customizability on textfield elements, thus this method will be called to customize fields using introspectAPI.
+	func setFieldAesthetics(with field:UITextField, label:String){
+		field.backgroundColor = .white
+		field.layer.borderWidth = 1
+		field.layer.cornerRadius = 5
+		field.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+		field.attributedPlaceholder = NSAttributedString(string: label, attributes: [
+			NSAttributedString.Key.foregroundColor : UIColor(red: 0, green: 0, blue: 0, alpha: 0.2),
+			NSAttributedString.Key.font : UIFont.systemFont(ofSize: 30, weight: .ultraLight)
+		])
 	}
 	
 	func validateAccountCreds(){
