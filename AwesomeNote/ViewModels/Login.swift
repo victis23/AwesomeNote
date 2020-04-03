@@ -235,10 +235,12 @@ struct QuestionTableView: View {
 		.foregroundColor(Color(UIColor(red: 0.3, green: 0.4, blue: 0.8, alpha: 0.8)))
 		.introspectTableView(customize: { item in
 			item.backgroundColor = .white
+			item.separatorColor = .clear
 			item.visibleCells.forEach { cell in cell.backgroundColor = .white}
 		})
-			.frame(height: isCreatingAccount ? 375 : 225, alignment: .center)
+			.frame(height: isCreatingAccount ? 400 : 225, alignment: .center)
 			.animation(Animation.easeIn(duration: 1))
+			.textFieldStyle(RoundedBorderTextFieldStyle())
 	}
 	
 	func validateAccountCreds(){
