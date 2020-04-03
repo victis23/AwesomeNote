@@ -53,6 +53,15 @@ class ViewController: UIViewController {
 		
 		setNeedsStatusBarAppearanceUpdate()
 		self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+		
+		DispatchQueue.main.async { [weak self] in
+			/* Testing */
+			self?.dyamoDBHelper?.retrieveFromDB(completion: {notes in
+				print(notes)
+				print("Firing")
+			})
+			/*End Testing*/
+		}
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -63,13 +72,6 @@ class ViewController: UIViewController {
 		
 		self.title = "Notes"
 		navigationController?.navigationBar.prefersLargeTitles = true
-		
-		/* Testing */
-		dyamoDBHelper?.retrieveFromDB(completion: {notes in
-			print(notes)
-			print("Firing")
-		})
-		/*End Testing*/
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle{
