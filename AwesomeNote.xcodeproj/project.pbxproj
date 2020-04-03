@@ -37,6 +37,8 @@
 		7D75F41F2435194E00841DB6 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D75F41E2435194E00841DB6 /* awsconfiguration.json */; };
 		7D75F42124351C8900841DB6 /* AWSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F42024351C8900841DB6 /* AWSHelper.swift */; };
 		7D75F424243550A300841DB6 /* EmailVerifier in Frameworks */ = {isa = PBXBuildFile; productRef = 7D75F423243550A300841DB6 /* EmailVerifier */; };
+		7D75F4282437706800841DB6 /* DynamoDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F4272437706700841DB6 /* DynamoDBHelper.swift */; };
+		7D75F42A243770F400841DB6 /* awesomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75F429243770F400841DB6 /* awesomeAPI.swift */; };
 		7D9BF83D2433819D00813563 /* CollectionView+Child_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */; };
 		7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */; };
 		7D9BF8412433FF4700813563 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9BF8402433FF4700813563 /* Notes.swift */; };
@@ -99,6 +101,8 @@
 		7D75F41C2434F48700841DB6 /* Strings+UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+UIScreen.swift"; sourceTree = "<group>"; };
 		7D75F41E2435194E00841DB6 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		7D75F42024351C8900841DB6 /* AWSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSHelper.swift; sourceTree = "<group>"; };
+		7D75F4272437706700841DB6 /* DynamoDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamoDBHelper.swift; sourceTree = "<group>"; };
+		7D75F429243770F400841DB6 /* awesomeAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = awesomeAPI.swift; sourceTree = SOURCE_ROOT; };
 		7D9BF83C2433819D00813563 /* CollectionView+Child_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Child_Main.swift"; sourceTree = "<group>"; };
 		7D9BF83E2433824C00813563 /* ChildViewCell+CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChildViewCell+CollectionViewCell.swift"; sourceTree = "<group>"; };
 		7D9BF8402433FF4700813563 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		7D27FDEB24326A3C0060DC29 /* AwesomeNote */ = {
 			isa = PBXGroup;
 			children = (
+				7D75F429243770F400841DB6 /* awesomeAPI.swift */,
 				7D75F41E2435194E00841DB6 /* awsconfiguration.json */,
 				7D75F40F2434CFE800841DB6 /* ViewModels */,
 				7D27FE3024326D710060DC29 /* ArtElements */,
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				7D27FE3224327A910060DC29 /* Retriever+CoreData.swift */,
+				7D75F4272437706700841DB6 /* DynamoDBHelper.swift */,
 				7D75F42024351C8900841DB6 /* AWSHelper.swift */,
 			);
 			path = Helpers;
@@ -582,8 +588,10 @@
 				7D27FDEF24326A3C0060DC29 /* SceneDelegate.swift in Sources */,
 				7D27FE2E24326C9A0060DC29 /* QuickSave+Model.swift in Sources */,
 				7D27FDF724326A3C0060DC29 /* AwesomeNote.xcdatamodeld in Sources */,
+				7D75F42A243770F400841DB6 /* awesomeAPI.swift in Sources */,
 				7D27FE2224326AE80060DC29 /* AddNote+ViewController.swift in Sources */,
 				7D75F41D2434F48700841DB6 /* Strings+UIScreen.swift in Sources */,
+				7D75F4282437706800841DB6 /* DynamoDBHelper.swift in Sources */,
 				7D9BF83F2433824C00813563 /* ChildViewCell+CollectionViewCell.swift in Sources */,
 				7D27FE2B24326C460060DC29 /* Keys.swift in Sources */,
 				7D75F4112434D0B700841DB6 /* Login.swift in Sources */,
