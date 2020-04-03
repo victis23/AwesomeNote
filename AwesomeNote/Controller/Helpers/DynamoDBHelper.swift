@@ -46,9 +46,7 @@ class DynamoDBHelper : Retriever {
 		}
 	}
 	
-	override func retrieveFromDB(query: NSPredicate? = nil) -> [CDNote]? {
-		
-		let PLACEHOLDER : [CDNote]? = nil
+	func retrieveFromDB(query: NSPredicate? = nil, completion: @escaping (([String]) -> Void)){
 		
 		
 		appSyncClient?.fetch(query: ListNotessQuery(), cachePolicy: .returnCacheDataAndFetch, queue: .global(qos: .background), resultHandler: { (result, error) in
@@ -57,13 +55,19 @@ class DynamoDBHelper : Retriever {
 				print("Query Failed with error: \(error)")
 			}
 			
+			
 			guard let result = result, let returnValue = result.data?.listNotess?.items else {return}
 			
-			returnValue.forEach { note in
-				print(note?.content ?? "Note was empty!")
+			var notes : [String] = []
+			
+			returnValue.forEach { value in
+				if let value = value{
+				let note = value.content
+					notes.append(note)
+				}
 			}
+			
+			completion(notes)
 		})
-		
-		return PLACEHOLDER
 	}
 }
