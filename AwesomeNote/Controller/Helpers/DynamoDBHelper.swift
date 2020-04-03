@@ -9,6 +9,22 @@
 import Foundation
 import AWSAppSync
 
-class DynamoDBHelper {
+
+///Class used to retrieve and write to AWS DynamoDB — Class is subclass of Retriever.
+class DynamoDBHelper : Retriever {
 	
+	override public func remove(object:Any){
+		
+	}
+	
+	override func saveInDB() {
+		
+	}
+	
+	override func retrieveFromDB(query: NSPredicate? = nil) -> [CDNote]? {
+		
+		let PLACEHOLDER : [CDNote]? = nil
+		
+		return PLACEHOLDER
+	}
 }
