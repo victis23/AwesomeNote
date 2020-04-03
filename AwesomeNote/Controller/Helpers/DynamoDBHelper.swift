@@ -13,6 +13,9 @@ import AWSAppSync
 ///Class used to retrieve and write to AWS DynamoDB — Class is subclass of Retriever.
 class DynamoDBHelper : Retriever {
 	
+	//AppSync Client used to perform CRUD.
+	private var appSyncClient = (UIApplication.shared.delegate as! AppDelegate).appSyncClientBridge
+	
 	override public func remove(object:Any){
 		
 	}
