@@ -54,10 +54,12 @@ allow: owner,
     update,
     delete
   ]}])
+  @key(name: "byIndex", fields: ["index"], queryField: "getNoteByIndex")
   {
     title : String!
     content : String!
     id: ID!
+    index : Int
     userId : ID
     user : User! @connection(name: "UserNotes", keyField: "userId")
   }
