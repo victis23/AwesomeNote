@@ -18,12 +18,12 @@ class ViewController: UIViewController {
 	//Persistent container context used to save values to local database.
 	private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
-	//Instance of helper class for saving and retriving items from persistent container.
+	//Instance of helper class for saving and retrieving items from persistent container.
 	weak internal var coreDataHelper : Retriever? {
 		Retriever(context: context)
 	}
 	
-	var dyamoDBHelper : DynamoDBHelper?
+	var dynamoDBHelper : DynamoDBHelper?
 	
 	// Instance of Core Data Note Object.
 	weak private var note : CDNote? {
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 		
 		DispatchQueue.main.async { 
 			/* Testing */
-			self.dyamoDBHelper?.retrieveFromDB(completion: {notes in
+			self.dynamoDBHelper?.retrieveFromDB(completion: {notes in
 				print(notes)
 				print("Firing")
 			})
@@ -121,7 +121,7 @@ class ViewController: UIViewController {
 				guard let content = saveNoteController.userNoteTextView.text, content != "",content != " ",
 					let object = coreDataHelper?.retrieveFromDB(query: query) else {return}
 				
-				//Deletes objects with matching index from coredata.
+				//Deletes objects with matching index from core-data.
 				//Remember this is a required step or we will have duplicates.
 				object.forEach {
 					coreDataHelper?.remove(object: $0)
@@ -136,7 +136,10 @@ class ViewController: UIViewController {
 				note.content = content
 				note.index = Int16(indexPath.row + 1)
 				
+				self.dynamoDBHelper = DynamoDBHelper(note: note)
+				self.dynamoDBHelper?.modifyExistingDBEntry()
 				coreDataHelper?.saveInDB()
+				self.dynamoDBHelper = nil
 				
 				//Removes old version of note from Notes Array.
 				notes.remove(at: indexPath.row)
@@ -169,8 +172,9 @@ class ViewController: UIViewController {
 					note.index = Int16(notes.count + 1)
 				}
 				
-				dyamoDBHelper = DynamoDBHelper(note: note)
-				dyamoDBHelper?.saveInDB()
+				dynamoDBHelper = DynamoDBHelper(note: note)
+				dynamoDBHelper?.saveInDB()
+				dynamoDBHelper = nil
 				
 				notes.append(note)
 				coreDataHelper?.saveInDB()
