@@ -33,7 +33,7 @@ class DynamoDBHelper : Retriever {
 		if let title = note.title, let content = note.content {
 			let write = CreateNotesInput(title: title, content: content, index: Int(note.index))
 			
-			appSyncClient?.perform(mutation: CreateNotesMutation(input: write), resultHandler: { (result, error) in
+			appSyncClient?.perform(mutation: CreateNotesMutation(input: write, condition: nil), resultHandler: { (result, error) in
 				
 				if let error = error {
 					print(error.localizedDescription)
@@ -53,14 +53,14 @@ class DynamoDBHelper : Retriever {
 	func retrieveFromDB(query: NSPredicate? = nil, completion: @escaping (([String]) -> Void)){
 		
 		
-		appSyncClient?.fetch(query: ListNotessQuery(limit: 10), cachePolicy: .fetchIgnoringCacheData, queue: .global(qos: .background), resultHandler: { (result, error) in
+		appSyncClient?.fetch(query: ListNotessQuery(limit: 10), cachePolicy: .returnCacheDataAndFetch, queue: .global(qos: .background), resultHandler: { (result, error) in
 			
 			if let error = error as? AWSAppSyncClientError {
 				print("Query Failed with error: \(error)")
 			}
 			
 			
-			guard let result = result, let returnValue = result.data?.listNotess?.items else {return}
+			guard let result = result, let returnValue = result.data?.listNotess?.items else { print("No values returned!"); return}
 			
 			var notes : [String] = []
 			
@@ -79,6 +79,7 @@ class DynamoDBHelper : Retriever {
 		
 		guard let optionalUserName : NSString = AWSMobileClient.default().username as NSString? else {return}
 		let username = optionalUserName
+		print(username)
 	
 		appSyncClient?.perform(mutation: UpdateNotesMutation(input: UpdateNotesInput(title: note.title, content: note.content, id: GraphQLID(username), index: Int(note.index))), queue: .main, resultHandler: { (result, error) in
 			
