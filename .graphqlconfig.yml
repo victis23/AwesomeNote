@@ -1,6 +1,6 @@
 projects:
   awesomenote:
-    schemaPath: graphql/schema.json
+    schemaPath: amplify/backend/api/awesomenote/build/schema.graphql
     includes:
       - graphql/**/*.graphql
     excludes:
@@ -10,3 +10,6 @@ projects:
         codeGenTarget: swift
         generatedFileName: awesomeAPI.swift
         docsFilePath: graphql
+extensions:
+  amplify:
+    version: 3
