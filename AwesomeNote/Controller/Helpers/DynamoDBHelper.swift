@@ -8,6 +8,7 @@
 
 import Foundation
 import AWSAppSync
+import AWSMobileClient
 
 
 ///Class used to retrieve and write to AWS DynamoDB — Class is subclass of Retriever.
@@ -30,7 +31,7 @@ class DynamoDBHelper : Retriever {
 	override func saveInDB() {
 		
 		if let title = note.title, let content = note.content {
-			let write = CreateNotesInput(title: title, content: content)
+			let write = CreateNotesInput(title: title, content: content, index: Int(note.index))
 			
 			appSyncClient?.perform(mutation: CreateNotesMutation(input: write), resultHandler: { (result, error) in
 				
@@ -52,7 +53,7 @@ class DynamoDBHelper : Retriever {
 	func retrieveFromDB(query: NSPredicate? = nil, completion: @escaping (([String]) -> Void)){
 		
 		
-		appSyncClient?.fetch(query: ListNotessQuery(), cachePolicy: .fetchIgnoringCacheData, queue: .global(qos: .background), resultHandler: { (result, error) in
+		appSyncClient?.fetch(query: ListNotessQuery(limit: 10), cachePolicy: .fetchIgnoringCacheData, queue: .global(qos: .background), resultHandler: { (result, error) in
 			
 			if let error = error as? AWSAppSyncClientError {
 				print("Query Failed with error: \(error)")
@@ -71,6 +72,24 @@ class DynamoDBHelper : Retriever {
 			}
 			
 			completion(notes)
+		})
+	}
+	
+	func modifyExistingDBEntry(){
+		
+		guard let optionalUserName : NSString = AWSMobileClient.default().username as NSString? else {return}
+		let username = optionalUserName
+	
+		appSyncClient?.perform(mutation: UpdateNotesMutation(input: UpdateNotesInput(title: note.title, content: note.content, id: GraphQLID(username), index: Int(note.index))), queue: .main, resultHandler: { (result, error) in
+			
+			if let error = error{
+				print(error.localizedDescription)
+				return
+			}
+			
+			if let result = result {
+				print("The DB has been updated successfully with result : \(result).")
+			}
 		})
 	}
 }
