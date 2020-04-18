@@ -57,8 +57,7 @@ class ViewController: UIViewController {
 		DispatchQueue.main.async { 
 			/* Testing */
 			self.dynamoDBHelper?.retrieveFromDB(completion: {notes in
-				print(notes)
-				print("Firing")
+				print("This is what was retrieved from DB: \(notes)")
 			})
 			/*End Testing*/
 		}
