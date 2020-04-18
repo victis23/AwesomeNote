@@ -17,6 +17,8 @@ class DynamoDBHelper : Retriever {
 	//AppSync Client used to perform CRUD.
 	var appSyncClient = (UIApplication.shared.delegate as! AppDelegate).appSyncClientBridge
 	
+	private var currentUserID = AWSMobileClient.default().username! as NSString
+	
 	var note : CDNote
 	
 	init?(note:CDNote){
@@ -75,13 +77,31 @@ class DynamoDBHelper : Retriever {
 		})
 	}
 	
+//	///Retrieves notes from DynamoDB
+//	func retrieveFromDB(query: NSPredicate? = nil, completion: @escaping (([String]) -> Void)){
+//
+//
+//
+//		appSyncClient?.fetch(query: GetNotesQuery(id: GraphQLID(currentUserID)), cachePolicy: .returnCacheDataAndFetch, queue: .global(qos: .background), resultHandler: { (result, error) in
+//
+//			if let error = error as? AWSAppSyncClientError {
+//				print("Query Failed with error: \(error)")
+//			}
+//
+//
+//			guard let result = result, let returnValue = result.data?.getNotes?.content else { print("No values returned!"); return}
+//
+//			var notes : [String] = []
+//
+//			notes.append(returnValue)
+//
+//			completion(notes)
+//		})
+//	}
+	
 	func modifyExistingDBEntry(){
 		
-		guard let optionalUserName : NSString = AWSMobileClient.default().username as NSString? else {return}
-		let username = optionalUserName
-		print(username)
-	
-		appSyncClient?.perform(mutation: UpdateNotesMutation(input: UpdateNotesInput(title: note.title, content: note.content, id: GraphQLID(username), index: Int(note.index))), queue: .main, resultHandler: { (result, error) in
+		appSyncClient?.perform(mutation: UpdateNotesMutation(input: UpdateNotesInput(title: note.title, content: note.content, id: GraphQLID(currentUserID), index: Int(note.index))), queue: .main, resultHandler: { (result, error) in
 			
 			if let error = error{
 				print(error.localizedDescription)
